@@ -56,8 +56,8 @@
                   <div class="auth-page-sidebar">
                     <div class="overlay"></div>
                     <div class="auth-user-testimonial">
-                      <p class="fs-24 fw-bold text-white mb-1">KAGEMNI</p>
-                      <p class="lead">"KAGEMNI"</p>
+                      <p class="fs-24 fw-bold text-white mb-1">DFRMI</p>
+                      <p class="lead">"Département de Formation et de Recherche en Mathématiques et Informatique"</p>
                       <p>KAGEMNI</p>
                     </div>
                   </div>

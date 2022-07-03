@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::post('/', function () {
-    return view('accueil');
-});
+// Route::post('/', function () {
+//     return view('accueil');
+// });
 Route::get('/accueil', function () {
     return view('accueil');
 });
@@ -25,9 +25,6 @@ Route::get('/matieres', function () {
 });
 Route::get('/publications', function () {
     return view('publications');
-});
-Route::get('/journals', function () {
-    return view('journals');
 });
 Route::get('/themes', function () {
     return view('themes');
