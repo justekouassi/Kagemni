@@ -15,8 +15,8 @@
         <div class="col-md-12">
           <nav aria-label="breadcrumb" class="float-right mt-1">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-              <li class="breadcrumb-item"><a href="#">Enseignants</a></li>
+              <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+              <li class="breadcrumb-item"><a href="/enseignants">Enseignants</a></li>
               <li class="breadcrumb-item active" aria-current="page"><a>Ajouter</a></li>
             </ol>
           </nav>
@@ -30,7 +30,7 @@
               <div class="d-flex mb-2">
                 <h4 class="header-title mt-0 mb-1">Ajouter un enseignant</h4>
               </div>
-              <form method="POST" action="/enseignants" class="form-horizontal">
+              <form method="POST" action="/enseignants/create" class="form-horizontal">
                 {{ csrf_field() }}
                 
                 <input type="hidden" name="_token" value="J3eKXKzbV4U3TC6QXwDIywR2BQcW0ufo4cUalrkc">
@@ -43,17 +43,17 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label" for="simpleinput">Prenoms</label>
+                      <label class="col-lg-2 col-form-label" for="simpleinput">Prénoms</label>
                       <div class="col-lg-10">
                         <input required type="text" class="form-control" id="simpleinput" name="prenom">
                       </div>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                       <label class="col-lg-2 col-form-label" for="example-email">Date de naissance</label>
                       <div class="col-lg-10">
                         <input required type="date" class="form-control" name="dob">
                       </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group row">
                       <label class="col-lg-2 col-form-label" for="example-email">Numéro de téléphone</label>
                       <div class="col-lg-10">

@@ -15,12 +15,13 @@
               <div class="row g-0">
                 <div class="col-lg-6 p-4">
                   <div class="mx-auto">
-                    <a href="/">
-                      <img src="{{ asset('images/logo.png') }}" alt="Kagemni" height="24" />
+                    <a href="/" style="text-decoration: none">
+                      <img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30" />
+                      &nbsp;&nbsp;<span style="font-family: cursive">KAGEMNI</span>
                     </a>
                   </div>
 
-                  <h6 class="h5 mb-0 mt-3">Bienvenue</h6>
+                  <h6 class="h5 mb-0 mt-3">Bienvenue cher administrateur</h6>
                   <p class="text-muted mt-1 mb-4">Entrez votre adresse mail et votre de passe pour accéder au panel administrateur.</p>
 
                   <form action="/" method="POST" class="authentication-form">
@@ -31,7 +32,7 @@
                         <span class="input-group-text">
                           <i class="bi bi-envelope" data-feather="mail"></i>
                         </span>
-                        <input type="email" class="form-control" id="email" placeholder="admin@inphb.ci">
+                        <input type="email" class="form-control" name="email" placeholder="admin@inphb.ci" required>
                       </div>
                     </div>
 
@@ -42,8 +43,11 @@
                         <span class="input-group-text">
                           <i class="bi bi-lock" data-feather="lock"></i>
                         </span>
-                        <input type="password" class="form-control" id="password" placeholder="admin">
+                        <input type="text" class="form-control" name="password" placeholder="admin" required>
                       </div>
+                        @if ($errors->has('password'))
+                        <p style="color: red">{{ $errors->first('password') }}</p>
+                        @endif
                     </div>
 
                     <div class="mb-3 text-center d-grid">

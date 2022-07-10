@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+  <link rel="icon" href="{{ asset('images/logo.png') }}">
+
   <!-- App css -->
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
@@ -29,13 +31,16 @@
   <link href="{{ asset('libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css" />
 </head>
 
-<body cz-shortcut-listen="true" class="sidebar-enable">
+<body cz-shortcut-listen="true">
   <!-- Begin page -->
   <div id="wrapper">
 
     <!-- Topbar Start -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/accueil">KAGEMNI</a>
+      <a class="navbar-brand" href="/accueil">
+        <img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="40" />
+        &nbsp;&nbsp;KAGEMNI
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -53,24 +58,22 @@
     <!-- ========== Left Sidebar Start ========== -->
     <div class="left-side-menu">
       <div class="media user-profile mt-2 mb-2">
-        <img src="{{ asset('images/users/avatar-7.jpg') }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" />
+        {{-- <img src="{{ asset('images/users/avatar-7.jpg') }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" /> --}}
         <img src="{{ asset('images/users/avatar-7.jpg') }}" class="avatar-xs rounded-circle mr-2" alt="Avatar" />
 
         <div class="media-body">
           <h6 class="pro-user-name mt-0 mb-0">Admin</h6>
           <span class="pro-user-desc">Administrateur</span>
         </div>
-
         <div class="dropdown align-self-center profile-dropdown-menu">
-          <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+          <a class="dropdown-toggle mr-0" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
               <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
+            </svg> --}}
           </a>
-          <div class="dropdown-menu profile-dropdown">
+          <div class="dropdown-menu">
             <form action="/logout" method="post">
               {{ csrf_field() }}
-              <input type="hidden" name="_token" value="J3eKXKzbV4U3TC6QXwDIywR2BQcW0ufo4cUalrkc">
               <button type="submit" class="dropdown-item notify-item">
                 <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
                 <span>Déconnexion</span>
@@ -118,13 +121,13 @@
             <li>
               <a href="/publications">
                 <i class="bi bi-pencil-square" data-feather="book"></i>
-                <span> Publications </span>
+                <span> Projets enseignants </span>
               </a>
             </li>
             <li>
               <a href="/themes">
                 <i class="bi bi-folder2-open" data-feather="book"></i>
-                <span> Thèmes </span>
+                <span> Thèmes étudiants </span>
               </a>
             </li>
           </ul>
@@ -141,11 +144,11 @@
     @yield('content')
 
     <!-- Footer Start -->
-    <footer class="footer">
+    <footer class="footer" style="margin-left: 60px">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            {{ date('Y') }} &copy; Tous droits réservés.
+            {{ date('Y') }} &copy; ING INFO 2 - Tous droits réservés.
           </div>
         </div>
       </div>
@@ -207,6 +210,8 @@
 
   <!-- Vendor js -->
   <script src="{{ asset('js/vendor.min.js') }}"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <!-- optional plugins -->
   <script src="{{ asset('libs/moment/moment.min.js') }}"></script>

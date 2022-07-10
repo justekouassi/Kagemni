@@ -10,7 +10,6 @@
     <div class="content-page">
       <div class="content">
         <div class="container-fluid">
-          <br>
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
@@ -26,10 +25,9 @@
                       <thead>
                         <tr>
                           <th scope="col">N°</th>
-                          <th scope="col">Nom</th>
-                          <th scope="col">Prénoms</th>
+                          <th scope="col">Nom et Prénoms</th>
                           <th scope="col">Email</th>
-                          <th scope="col">Numéro de téléphone</th>
+                          <th scope="col" style="width: 20px">Numéro de téléphone</th>
                           <th scope="col">Action</th>
                         </tr>
                       </thead>
@@ -40,8 +38,7 @@
 
                           <tr>
                             <th scope="row">{{$enseignant->id}}</th>
-                            <td>{{$enseignant->nom_enseignant}}</td>
-                            <td>{{$enseignant->prenoms_enseignant}}</td>
+                            <td>{{$enseignant->nom_enseignant}} {{$enseignant->prenoms_enseignant}}</td>
                             <td>{{$enseignant->email_enseignant}}</td>
                             <td>{{$enseignant->tel_enseignant}}</td>
                             <td>

@@ -51,9 +51,9 @@
               <div class="card-body p-0">
                 <div class="media p-3">
                   <div class="media-body">
-                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Enseignant
+                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Enseignants
                     </span>
-                    <h2 class="mb-0">3</h2>
+                    <h2 class="mb-0">2</h2>
                   </div>
                   <div class="align-self-center">
                     <div id="today-revenue-chart" class="apex-charts"></div>
@@ -67,23 +67,7 @@
               <div class="card-body p-0">
                 <div class="media p-3">
                   <div class="media-body">
-                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Thèmes
-                    </span>
-                    <h2 class="mb-0">3</h2>
-                  </div>
-                  <div class="align-self-center">
-                    <div id="today-revenue-chart" class="apex-charts"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <div class="card">
-              <div class="card-body p-0">
-                <div class="media p-3">
-                  <div class="media-body">
-                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Etudiant
+                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Etudiants
                     </span>
                     <h2 class="mb-0">5</h2>
                   </div>
@@ -99,7 +83,23 @@
               <div class="card-body p-0">
                 <div class="media p-3">
                   <div class="media-body">
-                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Classe
+                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Classes
+                    </span>
+                    <h2 class="mb-0">3</h2>
+                  </div>
+                  <div class="align-self-center">
+                    <div id="today-revenue-chart" class="apex-charts"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="media p-3">
+                  <div class="media-body">
+                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Projets en cours
                     </span>
                     <h2 class="mb-0">2</h2>
                   </div>
@@ -112,7 +112,7 @@
           </div>
 
         </div>
-        <div class="alert alert-success alert-dismissible fade show" role="alert"> Bienvenue sur gestion MATH INFO Admin!
+        <div class="alert alert-success alert-dismissible fade show" role="alert"> Bienvenue sur Kagemni, votre superbe plateforme de gestion !
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
