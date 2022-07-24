@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enseignant extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    protected $fillable = [
-        'id_enseignant',
-        'nom_enseignant',
-        'prenoms_enseignant',
-        'sexe_enseignant',
-        'tel_enseignant',
-        'email_enseignant',
-        'id_cours',
-        'id_etudiant',
-        'id_projet',
-    ];
+	protected $fillable = [
+		'id_enseignant',
+		'nom_enseignant',
+		'prenoms_enseignant',
+		'sexe_enseignant',
+		'tel_enseignant',
+		'email_enseignant',
+		'id_cours',
+		'id_etudiant',
+		'id_projet',
+	];
 }

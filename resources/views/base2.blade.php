@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <link rel="icon" href="{{ asset('images/logo.png') }}">
+  <link rel="" href="{{ asset('images/logo.png') }}">
 
   <!-- App css -->
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -47,10 +47,6 @@
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Recherche ..." aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
       </div>
     </nav>
     <!-- end Topbar -->
@@ -67,9 +63,6 @@
         </div>
         <div class="dropdown align-self-center profile-dropdown-menu">
           <a class="dropdown-toggle mr-0" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg> --}}
           </a>
           <div class="dropdown-menu">
             <form action="/logout" method="post">
@@ -119,7 +112,7 @@
               </a>
             </li>
             <li>
-              <a href="/publications">
+              <a href="/projets">
                 <i class="bi bi-pencil-square" data-feather="book"></i>
                 <span> Projets enseignants </span>
               </a>

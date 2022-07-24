@@ -1,6 +1,6 @@
 @extends('base2')
 
-@section('title', 'Publications')
+@section('title', 'projets')
 
 @section('content')
 
@@ -17,9 +17,9 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex mb-2">
-                    <h4 class="header-title mt-0 mb-1">Liste des publications</h4>
+                    <h4 class="header-title mt-0 mb-1">Liste des projets</h4>
                     <a class="ml-auto btn btn-primary"
-                      href="publications/create">Ajouter</a>
+                      href="projets/create">Ajouter</a>
                   </div>
 
                   <div class="table-responsive">
@@ -41,8 +41,8 @@
                           <td>La nouvelle achete</td>
                           <td>1998-02-15</td>
                           <td>
-                            <form action="publications/2" method="POST">
-                              <a href="publications/2/edit"
+                            <form action="projets/2" method="POST">
+                              <a href="projets/2/edit"
                                 class="btn btn-primary btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

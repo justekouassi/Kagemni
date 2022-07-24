@@ -7,17 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- App favicon -->
-  <link rel="shortcut icon" href="{{ asset('images/favicon.ico">
+  <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
   <!-- App css -->
-  <link href="{{ asset('css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-  <link href="{{ asset('css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+  <link href="{{ asset('css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
-  <link href="{{ asset('css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" disabled />
-  <link href="{{ asset('css/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" disabled />
+  <link href="{{ asset('css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" disabled />
+  <link href="{{ asset('css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" disabled />
 
   <!-- icons -->
-  <link href="{{ asset('css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -33,7 +33,7 @@
                 <div class="col-lg-6 p-4">
                   <div class="mx-auto">
                     <a href="/">
-                      <img src="{{ asset('images/logo-dark.png" alt="" height="24" />
+                      <img src="{{ asset('images/logo-dark.png') }}" alt="" height="24" />
                     </a>
                   </div>
 
@@ -119,10 +119,10 @@
   <!-- end page -->
 
   <!-- Vendor js -->
-  <script src="{{ asset('js/vendor.min.js"></script>
+  <script src="{{ asset('js/vendor.min.js') }}"></script>
 
   <!-- App js -->
-  <script src="{{ asset('js/app.min.js"></script>
+  <script src="{{ asset('js/app.min.js') }}"></script>
 
 </body>
 

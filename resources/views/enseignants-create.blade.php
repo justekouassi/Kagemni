@@ -37,27 +37,33 @@
                 <div class="row">
                   <div class="col">
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label" for="simpleinput">Nom</label>
+                      <label class="col-lg-2 col-form-label" for="nom">Nom</label>
                       <div class="col-lg-10">
-                        <input required type="text" class="form-control" id="simpleinput" name="nom">
+                        <input required type="text" class="form-control" id="nom" name="nom">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label" for="simpleinput">Prénoms</label>
+                      <label class="col-lg-2 col-form-label" for="prenom">Prénoms</label>
                       <div class="col-lg-10">
-                        <input required type="text" class="form-control" id="simpleinput" name="prenom">
+                        <input required type="text" class="form-control" id="prenom" name="prenom">
                       </div>
                     </div>
-                    {{-- <div class="form-group row">
-                      <label class="col-lg-2 col-form-label" for="example-email">Date de naissance</label>
-                      <div class="col-lg-10">
-                        <input required type="date" class="form-control" name="dob">
-                      </div>
-                    </div> --}}
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label" for="example-email">Numéro de téléphone</label>
+                      <label class="col-lg-2 col-form-label" for="sexe">Sexe</label>
+                      <div class="col-lg-10">
+                        <input required type="text" class="form-control" id="sexe" name="sexe">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-2 col-form-label" for="example-email">Téléphone</label>
                       <div class="col-lg-10">
                         <input required type="text" name="tel" class="form-control" placeholder="+225 0748502093">
+                      </div>
+                    </div>
+										<div class="form-group row">
+                      <label class="col-lg-2 col-form-label" for="email">Email</label>
+                      <div class="col-lg-10">
+                        <input required type="email" class="form-control" id="email" name="email">
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
