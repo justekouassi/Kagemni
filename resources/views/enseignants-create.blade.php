@@ -30,10 +30,9 @@
               <div class="d-flex mb-2">
                 <h4 class="header-title mt-0 mb-1">Ajouter un enseignant</h4>
               </div>
-              <form method="POST" action="/enseignants/create" class="form-horizontal">
+              <form method="post" action="/enseignants/create">
                 {{ csrf_field() }}
                 
-                <input type="hidden" name="_token" value="J3eKXKzbV4U3TC6QXwDIywR2BQcW0ufo4cUalrkc">
                 <div class="row">
                   <div class="col">
                     <div class="form-group row">

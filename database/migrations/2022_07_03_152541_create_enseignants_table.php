@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('sexe_enseignant');
             $table->integer('tel_enseignant');
             $table->string('email_enseignant');
-            $table->unsignedBigInteger('id_cours')->index();
-            $table->unsignedBigInteger('id_etudiant')->index();
-            $table->unsignedBigInteger('id_projet')->index();
+            $table->unsignedBigInteger('id_cours')->index()->nullable();
+            $table->unsignedBigInteger('id_etudiant')->index()->nullable();
+            $table->unsignedBigInteger('id_projet')->index()->nullable();
 
             $table->foreign('id_cours')
                 ->references('id')

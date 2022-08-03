@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enseignant;
 use Illuminate\Http\Request;
 
 class EnseignantController extends Controller
@@ -11,9 +12,9 @@ class EnseignantController extends Controller
 		request()->validate([
 			'nom' => ['required'],
 			'prenom' => ['required'],
-			'sexe' => [],
-			'tel' => [],
-			'email' => ['email'],
+			'sexe' => ['required'],
+			'tel' => ['required'],
+			'email' => ['required', 'email'],
 		]);
 
 		$enseignant = \App\Models\Enseignant::create([
@@ -27,11 +28,44 @@ class EnseignantController extends Controller
 		return view("enseignants");
 	}
 
+	public function consulter()
+	{
+		$id = request("id");
+		$enseignant = Enseignant::where('id', $id)->first();
+		return view("enseignants-edit", [
+			'enseignant' => $enseignant,
+		]);
+	}
+
 	public function modifier()
 	{
+		request()->validate([
+			'nom' => ['required'],
+			'prenom' => ['required'],
+			'sexe' => ['required'],
+			'tel' => ['required'],
+			'email' => ['required', 'email'],
+		]);
+
+		$id = request("id");
+		$enseignant = Enseignant::where('id', $id)->first();
+		$enseignant->update([
+			"nom_enseignant" => request("nom"),
+			"prenoms_enseignant" => request("prenom"),
+			"sexe_enseignant" => request("sexe"),
+			"tel_enseignant" => request("tel"),
+			"email_enseignant" => request("email"),
+		]);
+
+		return view("enseignants");
 	}
 
 	public function supprimer()
 	{
+		$id = request("id");
+		$enseignant = Enseignant::where('id', $id)->first();
+		$enseignant->delete();
+
+		return view("enseignants");
 	}
 }

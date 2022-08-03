@@ -17,9 +17,6 @@ Route::post('/', [ConnexionController::class, 'connexion']);
 // 	return view('accueil');
 // });
 
-Route::get('/classes', function () {
-	return view('classes');
-});
 
 // Routes enseignants
 Route::get('/enseignants', function () {
@@ -29,8 +26,10 @@ Route::get('/enseignants/create', function () {
 	return view('enseignants-create');
 });
 Route::post('/enseignants/create', [EnseignantController::class, 'ajouter']);
-Route::get('/enseignants/{id}/edit', [EnseignantController::class, 'modifier']);
-Route::post('/enseignants/{id}/edit', [EnseignantController::class, 'voir']);
+Route::get('/enseignants/{id}/edit', [EnseignantController::class, 'consulter']);
+Route::post('/enseignants/{id}/edit', [EnseignantController::class, 'modifier']);
+Route::get('enseignants/{id}/delete', [EnseignantController::class, 'supprimer']);
+
 
 // Routes etudiants
 Route::get('/etudiants', function () {
@@ -43,11 +42,15 @@ Route::post('/etudiants/create', [EtudiantController::class, 'ajouter']);
 Route::get('/etudiants/{id}/edit', [EtudiantController::class, 'modifier']);
 Route::post('/etudiants/{id}/edit', [EtudiantController::class, 'voir']);
 
+
 // Routes matieres
 Route::get('/matieres', function () {
 	return view('matieres');
 });
 
+Route::get('/classes', function () {
+	return view('classes');
+});
 
 Route::get('/projets', function () {
 	return view('projets');
