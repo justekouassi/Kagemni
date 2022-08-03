@@ -16,8 +16,7 @@
                 <div class="card-body">
                   <div class="d-flex mb-2">
                     <h4 class="header-title mt-0 mb-1">Liste des enseignants </h4>
-                    <a class="ml-auto btn btn-primary"
-                      href="enseignants/create">Ajouter</a>
+                    <a class="ml-auto btn btn-primary" href="/enseignants/create">Ajouter</a>
                   </div>
 
                   <div class="table-responsive">
@@ -62,12 +61,10 @@
                                     </path>
                                   </svg>
                                 </a>
-                                <a href="/enseignants/{{$enseignant->id}}/encadrements"
-                                  class="btn btn-success btn-sm">
+                                <a href="/enseignants/{{$enseignant->id}}/encadrements" class="btn btn-success btn-sm">
                                   Encadrements
                                 </a>
-                                <a href="/enseignants/{{$enseignant->id}}/projets"
-                                  class="btn btn-warning btn-sm">
+                                <a href="/enseignants/{{$enseignant->id}}/projets" class="btn btn-warning btn-sm">
                                   Projets
                                 </a>
                               </form>

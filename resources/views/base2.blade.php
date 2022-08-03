@@ -33,7 +33,9 @@
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/accueil">
 				<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30" />
-				&nbsp;KAGEMNI</a>
+				&nbsp;KAGEMNI
+			</a>
+			<br>
 			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#my-navbar"
 				aria-controls="my-navbar">
 				<i class="bi bi-list"></i>
