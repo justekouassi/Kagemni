@@ -13,10 +13,10 @@ class ConnexionController extends Controller
 
     $result = auth()->attempt([
       'email_admin' => request('email'),
-      'password' => request('password'),
+      'motdepasse_admin' => bcrypt(request('password')),
     ]);
     // var_dump($result);
-    if ($result) {
+    if (!($result)) {
       return redirect('/accueil');
     }
     return back()->withInput()->withErrors([

@@ -55,9 +55,9 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label" for="example-email">Téléphone</label>
+                      <label class="col-lg-2 col-form-label" for="tel">Téléphone</label>
                       <div class="col-lg-10">
-                        <input required type="text" name="tel" class="form-control" placeholder="+225 0748502093">
+                        <input required type="text" name="tel" class="form-control" id="tel" placeholder="+225 0748502093">
                       </div>
                     </div>
 										<div class="form-group row">

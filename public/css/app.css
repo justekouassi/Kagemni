@@ -1,0 +1,47 @@
+nav {
+	float: left;
+}
+
+.navbar,
+.navbar-collapse {
+	flex-direction: column;
+}
+
+.navbar-expand-lg .navbar-nav {
+	flex-direction: column;
+}
+
+.navbar {
+	width: 15%;
+	height: 100vh;
+	align-items: flex-start;
+}
+
+.navbar-brand {
+	margin-left: 0.5em;
+	padding-bottom: 0;
+	border-bottom: 4px solid #464646;
+}
+
+.navbar .container-fluid,
+.navbar-expand-lg .navbar-collapse,
+.navbar-expand-lg .navbar-nav {
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+@media screen and (max-width: 500px) {
+	.navbar-brand {
+		display: none;
+	}
+}
+
+main {
+	margin-right: 50px;
+	padding-top: 40px;
+	text-align: justify;
+}
+
+form input {
+	margin-bottom: 0.7em;
+}

@@ -7,19 +7,19 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 
 class Administrateur extends Model implements Authenticatable {
-    use BasicAuthenticatable;
+	use BasicAuthenticatable;
 
-    protected $fillable = [
-        "email_admin",
-        "motdepasse_admin",
-    ];
+	protected $fillable = [
+		"email_admin",
+		"motdepasse_admin",
+	];
 
-    public function getAuthPassword() {
-        return $this->motdepasse_admin;
-    }
+	public function getAuthPassword() {
+		return $this->motdepasse_admin;
+	}
 
-    public function getRememberTokenName()
-    {
-        return null;
-    }
+	public function getRememberTokenName()
+	{
+		return null;
+	}
 }

@@ -38,12 +38,12 @@
 
                     <div class="mb-3">
                       <label class="form-label">Mot de passe</label>
-                      <a href="pages-recoverpw.html" class="float-end text-muted text-unline-dashed ms-1">Mot de passe oublié ?</a>
+                      <a href="/pages-recoverpw" class="float-end text-muted text-unline-dashed ms-1">Mot de passe oublié ?</a>
                       <div class="input-group">
                         <span class="input-group-text">
                           <i class="bi bi-lock" data-feather="lock"></i>
                         </span>
-                        <input type="text" class="form-control" name="password" placeholder="admin" required>
+                        <input type="password" class="form-control" name="password" placeholder="admin" required>
                       </div>
                         @if ($errors->has('password'))
                         <p style="color: red">{{ $errors->first('password') }}</p>
