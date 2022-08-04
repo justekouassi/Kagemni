@@ -19,9 +19,12 @@ Route::get('/', function () {
 	return view('index');
 });
 Route::post('/', [ConnexionController::class, 'connexion']);
-// Route::post('/', function () {
-// 	return view('accueil');
-// });
+Route::get('/signup', function () {
+	return view('signup');
+});
+Route::post('/signup', [ConnexionController::class, 'inscription']);
+Route::get('/logout', [ConnexionController::class, 'deconnexion']);
+
 Route::get('/pages-login', function () {
 	return view('pages-login');
 });

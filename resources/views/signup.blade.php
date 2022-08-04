@@ -1,10 +1,10 @@
 @extends('base')
 
-@section("title", "Connexion")
+@section("title", "Inscription")
 
 @section('content')
 
-<body>
+<body class="authentication-bg">
 
   <div class="account-pages my-5">
     <div class="container">
@@ -24,7 +24,7 @@
                   <h6 class="h5 mb-0 mt-3">Bienvenue cher administrateur</h6>
                   <p class="text-muted mt-1 mb-4">Entrez votre adresse mail et votre de passe pour accéder au panel administrateur.</p>
 
-                  <form method="POST" action="/">
+                  <form method="POST" action="/signup">
                     {{ csrf_field() }}
                     <div class="mb-3">
                       <label class="form-label">Adresse email</label>
@@ -34,9 +34,6 @@
                         </span>
                         <input type="email" class="form-control" name="email" placeholder="admin@inphb.ci" required>
                       </div>
-											@if ($errors->has('email'))
-											<p style="color: red">{{ $errors->first('email') }}</p>
-											@endif
                     </div>
 
                     <div class="mb-3">
@@ -48,13 +45,13 @@
                         </span>
                         <input type="password" class="form-control" name="password" placeholder="admin" required>
                       </div>
-											@if ($errors->has('password'))
-											<p style="color: red">{{ $errors->first('password') }}</p>
-											@endif
+                        @if ($errors->has('password'))
+                        <p style="color: red">{{ $errors->first('password') }}</p>
+                        @endif
                     </div>
 
                     <div class="mb-3 text-center d-grid">
-                      <input class="btn btn-primary" name="validate" type="submit" value="SE CONNECTER">
+                      <button class="btn btn-primary" type="submit">S'INSCRIRE</button>
                     </div>
                   </form>
                   

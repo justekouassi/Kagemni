@@ -7,7 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<link rel="icon" href="{{ asset('images/logo.png') }}">
+	<!-- Favicon --->
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon_io/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon_io/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon_io/favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ asset('images/favicon_io/site.webmanifest') }}">
 
 	<!-- Bootstrap css -->
 	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -16,12 +20,9 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" />
-
-	<link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
-	{{--
-	<link href="{{ asset('css/jquery.dataTables.min.css') }}" /> --}}
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}"/>
+	<link href="{{ asset('css/jquery.dataTables.min.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 
 	<!-- plugins -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('libs/flatpickr/flatpickr.min.css') }}" />
@@ -32,12 +33,11 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/accueil">
-				<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30" />
+				<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30"/>
 				&nbsp;KAGEMNI
 			</a>
 			<br>
-			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#my-navbar"
-				aria-controls="my-navbar">
+			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#my-navbar" aria-controls="my-navbar">
 				<i class="bi bi-list"></i>
 			</button>
 			<div class="offcanvas offcanvas-end" tabindex="-1" id="my-navbar" aria-labelledby="offcanvasNavbarLabel">
@@ -63,8 +63,8 @@
 						</li> --}}
 
 						<img src="{{ asset('images/users/avatar-7.jpg') }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" />
-						<h6 class="pro-user-name mt-0 mb-0">Admin</h6>
-						<span class="pro-user-desc">Administrateur</span>
+						<h6 class="mt-0 mb-0">Admin</h6>
+						<span class="pro-user-desc">{{ auth()->user()->email_admin }}</span>
 						<li class="menu-title">Navigation</li>
 						<li>
 							<a class="nav-link" href="/accueil">
@@ -110,15 +110,10 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<div class="dropdown-menu">
-								<form action="/logout" method="post">
-									{{ csrf_field() }}
-									<button type="submit" class="dropdown-item notify-item">
-										<i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
-										<span>Déconnexion</span>
-									</button>
-								</form>
-							</div>
+							<a class="nav-link btn btn-warning" href="/logout">
+								<i class="bi bi-escape"></i>
+								<span>Déconnexion</span>
+							</a>
 						</li>
 					</ul>
 				</div>

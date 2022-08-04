@@ -12,7 +12,7 @@
 				<div class="col-lg-12">
 					<div class="card">
 						<div class="card-body">
-							<div class="d-flex mb-2">
+							<div class="titre-ajout mb-2">
 								<h4 class="header-title mt-0 mb-1">Liste des étudiants</h4>
 								<a class="ml-auto btn btn-primary" href="/etudiants/create">Ajouter</a>
 							</div>

@@ -104,7 +104,7 @@
 
           <div class="row mt-3">
             <div class="col-12 text-center">
-              <p class="text-muted">Don't have an account? <a href="pages-register.html"
+              <p class="text-muted">Don't have an account? <a href="signup.html"
                   class="text-primary fw-bold ms-1">Sign Up</a></p>
             </div> <!-- end col -->
           </div>

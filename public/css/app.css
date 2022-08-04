@@ -41,6 +41,11 @@ main {
 	text-align: justify;
 }
 
+.titre-ajout {
+	display: flex;
+	justify-content: space-between;
+}
+
 form input {
 	margin-bottom: 0.7em;
 }
