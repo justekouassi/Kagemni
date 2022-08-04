@@ -21,10 +21,10 @@
                     </a>
                   </div>
 
-                  <h6 class="h5 mb-0 mt-3">Bienvenue administrateur principal</h6>
-                  <p class="text-muted mt-1 mb-4">Enregistrez un nouvel administrateur.</p>
+                  <h6 class="h5 mb-0 mt-3">Bienvenue administrateur</h6>
+                  <p class="text-muted mt-1 mb-4">Inscrivez votre nouveau mot de passe</p>
 
-                  <form method="POST" action="/signup">
+                  <form method="POST" action="/nouveau-mdp">
                     {{ csrf_field() }}
                     <div class="mb-3">
                       <label class="form-label" for="email">Adresse email</label>
@@ -52,8 +52,21 @@
 											@endif
                     </div>
 
+                    <div class="mb-3">
+                      <label class="form-label" for="password_confirmation">Confirmation mot de passe</label>
+                      <div class="input-group">
+                        <span class="input-group-text">
+                          <i class="bi bi-lock" data-feather="lock"></i>
+                        </span>
+                        <input type="password" class="form-control" name="password_confirmation" placeholder="admin" required>
+                      </div>
+											@if ($errors->has('password'))
+											<p style="color: red">{{ $errors->first('password') }}</p>
+											@endif
+                    </div>
+
                     <div class="mb-3 text-center d-grid">
-                      <button class="btn btn-success" type="submit">S'INSCRIRE</button>
+                      <button class="btn btn-success" type="submit">MODIFIER MOT DE PASSE</button>
                     </div>
                   </form>
                   

@@ -25,9 +25,10 @@ Route::get('/signup', function () {
 Route::post('/signup', [ConnexionController::class, 'inscription']);
 Route::get('/logout', [ConnexionController::class, 'deconnexion']);
 
-Route::get('/pages-login', function () {
-	return view('pages-login');
+Route::get('/nouveau-mdp', function () {
+	return view('nouveau-mdp');
 });
+Route::post('/nouveau-mdp', [ConnexionController::class, 'nouveauMdp']);
 
 
 /* Routes enseignants */

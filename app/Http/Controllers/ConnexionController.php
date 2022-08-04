@@ -1,16 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Administrateur;
 
 class ConnexionController extends Controller
 {
+	/**
+	 * assure l'inscription d'un administrateur
+	 * @return index la page de connexion
+	 */
 	public function inscription() {
     request()->validate([
       'email' => ['required', 'email'],
       'password' => ['required'],
     ]);
 
-    $administrateur = \App\Models\Administrateur::create([
+    $administrateur = Administrateur::create([
       "email_admin" => request("email"),
       "motdepasse_admin" => bcrypt(request("password")),
     ]);
@@ -18,6 +23,10 @@ class ConnexionController extends Controller
     return view("index");
 	}
 
+	/**
+	 * assure la connexion d'un administrateur
+	 * @return accueil la page d'accueil
+	 */
   public function connexion()
   {
     request()->validate([
@@ -31,7 +40,7 @@ class ConnexionController extends Controller
     ]);
 
 		$id = request("id");
-    $administrateur = \App\Models\Administrateur::where('id', $id)->first();
+    $administrateur = Administrateur::where('id', $id)->first();
     if ($result) {
       return view('accueil', [
 				'administrateur' => $administrateur,
@@ -42,9 +51,34 @@ class ConnexionController extends Controller
     ]);
   }
 
+	/**
+	 * assure la déconnexion d'un administrateur
+	 * @return index la page de connexion
+	 */
 	public function deconnexion()
   {
     auth()->logout();
     return redirect('/');
   }
+
+	/**
+	 * permet de modifier le mot de passe d'un administrateur
+	 * @return index la page de connexion
+	 */
+	public function nouveauMdp()
+	{
+		request()->validate([
+			'email' => ['required', 'email'],
+      'password' => ['required', 'confirmed'],
+      'password_confirmation' => ['required'],
+		]);
+
+		$email = request("email");
+		$administrateur = Administrateur::where('email_admin', $email)->first();
+		$administrateur->update([
+      "motdepasse_admin" => bcrypt(request("password")),
+		]);
+
+		return view("index");
+	}
 }

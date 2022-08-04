@@ -41,7 +41,7 @@
 
                     <div class="mb-3">
                       <label class="form-label">Mot de passe</label>
-                      <a href="/pages-recoverpw" class="float-end text-muted text-unline-dashed ms-1">Mot de passe oublié ?</a>
+                      <a href="/nouveau-mdp" class="float-end text-muted text-unline-dashed ms-1">Mot de passe oublié ?</a>
                       <div class="input-group">
                         <span class="input-group-text">
                           <i class="bi bi-lock" data-feather="lock"></i>
