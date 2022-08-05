@@ -13,12 +13,8 @@ return new class extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('administrateurs', function (Blueprint $table) {
-			$table->id();
-			$table->string('email_admin')->unique();
-			$table->string('motdepasse_admin');
+		Schema::table('administrateurs', function (Blueprint $table) {
 			$table->string('avatar')->nullable();
-			$table->timestamps();
 		});
 	}
 
@@ -29,6 +25,8 @@ return new class extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('administrateurs');
+		Schema::table('administrateurs', function (Blueprint $table) {
+			$table->dropColumn('avatar');
+		});
 	}
 };

@@ -3,9 +3,15 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>@yield('title') | {{ env('APP_NAME') }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="theme-color" content="#fff"/>
+	<meta name="author" content="Juste KOUASSI"/>
+	<meta name="copyright" content="Tout droit réservé à Juste KOUASSI sur ce site web"/>
+	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants dans un département académique"/>
+	<meta name="keywords" content="kagemni, site web kagemni, site internet kagemni, plateforme web de gestion, kagemni cote d'ivoire, kagemni web, dfrmi"/>
+
+	<title>@yield('title') | {{ env('APP_NAME') }}</title>
 
 	<!-- Favicon --->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon_io/apple-touch-icon.png') }}">
@@ -29,7 +35,6 @@
 </head>
 
 <body>
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/accueil">
@@ -62,32 +67,32 @@
 							</ul>
 						</li> --}}
 
-						<img src="{{ asset('images/users/avatar-7.jpg') }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" />
+						<img src="/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" />
 						<h6 class="mt-0 mb-0">Admin</h6>
 						<span class="pro-user-desc">{{ auth()->user()->email_admin }}</span>
 						<li class="menu-title">Navigation</li>
 						<li>
 							<a class="nav-link" href="/accueil">
-								<i class="bi bi-house-door" data-feather="home"></i>
+								<i class="bi bi-house-door"></i>
 								<span> Accueil </span>
 							</a>
 						</li>
 						<li class="menu-title">Menu</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/enseignants">
-								<i class="bi bi-people" data-feather="user"></i>
+								<i class="bi bi-people"></i>
 								<span> Enseignants </span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/etudiants">
-								<i class="bi bi-people-fill" data-feather="users"></i>
+								<i class="bi bi-people"></i>
 								<span> Etudiants </span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/classes">
-								<i class="bi bi-calendar4-week" data-feather="calendar"></i>
+								<i class="bi bi-calendar4-week"></i>
 								<span> Classes </span>
 							</a>
 						</li>
@@ -99,7 +104,7 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/projets">
-								<i class="bi bi-pencil-square" data-feather="book"></i>
+								<i class="bi bi-pencil-square"></i>
 								<span> Projets enseignants </span>
 							</a>
 						</li>
@@ -121,9 +126,7 @@
 	</nav>
 
 	<main>
-
 		@yield('content')
-
 	</main>
 
 	<!-- Footer Start -->
@@ -162,6 +165,10 @@
 			$('.table').DataTable();
 		});
 	</script>
+
+	<noscript>
+		<h1>Veuillez activer JavaScript svp !</h1>
+	</noscript>
 
 </body>
 

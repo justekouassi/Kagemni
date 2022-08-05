@@ -24,7 +24,7 @@
                   <h6 class="h5 mb-0 mt-3">Bienvenue administrateur principal</h6>
                   <p class="text-muted mt-1 mb-4">Enregistrez un nouvel administrateur.</p>
 
-                  <form method="POST" action="/signup">
+                  <form method="POST" action="/signup" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="mb-3">
                       <label class="form-label" for="email">Adresse email</label>
@@ -50,6 +50,13 @@
 											@if ($errors->has('password'))
 											<p style="color: red">{{ $errors->first('password') }}</p>
 											@endif
+                    </div>
+
+										<div class="mb-3">
+                      <label class="form-label" for="avatar">Photo de profil</label>
+                      <div class="input-group">
+                        <input type="file" class="form-control"  name="avatar">
+                      </div>
                     </div>
 
                     <div class="mb-3 text-center d-grid">

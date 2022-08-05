@@ -13,11 +13,13 @@ class ConnexionController extends Controller
     request()->validate([
       'email' => ['required', 'email'],
       'password' => ['required'],
+      'avatar' => ['image'],
     ]);
 
     $administrateur = Administrateur::create([
       "email_admin" => request("email"),
       "motdepasse_admin" => bcrypt(request("password")),
+      "avatar" => request("avatar")->store('avatars'),
     ]);
 
     return view("index");

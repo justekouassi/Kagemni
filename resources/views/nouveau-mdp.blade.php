@@ -4,7 +4,7 @@
 
 @section('content')
 
-<body class="authentication-bg">
+<body>
 
   <div class="account-pages my-5">
     <div class="container">
