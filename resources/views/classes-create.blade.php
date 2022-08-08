@@ -26,30 +26,38 @@
               <div class="d-flex mb-2">
                 <h4 class="header-title mt-0 mb-1">Ajouter une classe</h4>
               </div>
-
-							<?php $classe = \App\Models\Classe::all(); ?>
-
               <form method="post" action="/classes/create">
                 {{ csrf_field() }}
                 
                 <div class="row">
                   <div class="col">
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label" for="classe">Classe</label>
-                      <div class="col-lg-10">
-                        <input required type="text" class="form-control" id="classe" name="classe">
-                      </div>
-                      <label class="col-lg-2 col-form-label" for="filiere">Filière</label>
-											<div class="col-lg-10">
-                        <input required type="text" class="form-control" id="filiere" name="filiere">
-                      </div>
                       <label class="col-lg-2 col-form-label" for="ecole">Ecole</label>
-											<div class="col-lg-10">
-                        <input required type="text" class="form-control" id="ecole" name="ecole">
+											<div class="col-lg-10" style="margin-bottom: 11px">
+												<select required name="ecole" class="form-select" id="ecole">
+													<option selected>* Choisir une école *</option>
+													<option value="CPGE">CPGE</option>
+													<option value="ESA">ESA</option>
+													<option value="ESCAE">ESCAE</option>
+													<option value="ESI">ESI</option>
+													<option value="ESTP">ESTP</option>
+													<option value="ESMG">ESMG</option>
+													<option value="ESPE">ESPE</option>
+													<option value="IDSI">IDSI</option>
+													<option value="VALOPRO">VALOPRO</option>
+												</select>
+											</div>
+                      <label class="col-lg-2 col-form-label" for="filiere">Filière</label>
+											<div class="col-lg-10" id="filiere">
+                        <input required type="text" class="form-control" name="filiere">
+                      </div>
+                      <label class="col-lg-2 col-form-label" for="classe">Classe</label>
+                      <div class="col-lg-10" id="classe">
+                        <input required type="text" class="form-control" name="classe">
                       </div>
 											<label class="col-lg-2 col-form-label" for="annee">Année scolaire</label>
-											<div class="col-lg-10">
-                        <input required type="text" class="form-control" id="annee" name="annee">
+											<div class="col-lg-10" id="annee">
+                        <input required type="text" class="form-control" name="annee">
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>

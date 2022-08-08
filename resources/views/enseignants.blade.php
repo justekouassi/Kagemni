@@ -40,22 +40,19 @@
 												<td>{{$enseignant->email_enseignant}}</td>
 												<td>{{$enseignant->tel_enseignant}}</td>
 												<td>
-													<form action="/enseignants/{{$enseignant->id}}" method="POST">
-														{{ csrf_field() }}
-														<a href="/enseignants/{{$enseignant->id}}/edit"
-															class="btn btn-primary btn-sm">
-															<i class="bi bi-pencil-square"></i>
-														</a>
-														<a href="/enseignants/{{$enseignant->id}}/delete" class="btn btn-danger btn-sm">
-															<i class="bi bi-trash"></i>
-														</a>
-														<a href="/enseignants/{{$enseignant->id}}/encadrements" class="btn btn-success btn-sm">
-															Encadrements
-														</a>
-														<a href="/enseignants/{{$enseignant->id}}/projets" class="btn btn-warning btn-sm">
-															Projets
-														</a>
-													</form>
+													<a href="/enseignants/{{$enseignant->id}}/edit"
+														class="btn btn-primary btn-sm">
+														<i class="bi bi-pencil-square"></i>
+													</a>
+													<a href="/enseignants/{{$enseignant->id}}/delete" class="btn btn-danger btn-sm">
+														<i class="bi bi-trash"></i>
+													</a>
+													<a href="/enseignants/{{$enseignant->id}}/encadrements" class="btn btn-success btn-sm">
+														Encadrements
+													</a>
+													<a href="/enseignants/{{$enseignant->id}}/projets" class="btn btn-warning btn-sm">
+														Projets
+													</a>
 												</td>
 											</tr>
 										@endforeach

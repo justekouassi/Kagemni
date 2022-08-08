@@ -1,6 +1,6 @@
 @extends('base')
 
-@section("title", "Inscription")
+@section("title", "Modification de mot de passe")
 
 @section('content')
 

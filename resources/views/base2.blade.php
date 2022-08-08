@@ -66,7 +66,7 @@
 						<li class="menu-title">Menu</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/enseignants">
-								<i class="bi bi-people"></i>
+								<i class="bi bi-person"></i>
 								<span> Enseignants </span>
 							</a>
 						</li>
@@ -102,8 +102,8 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/themes">
-								<i class="bi bi-folder2-open" data-feather="book"></i>
-								<span> Thèmes étudiants </span>
+								<i class="bi bi-folder2-open"></i>
+								<span>Thèmes étudiants</span>
 							</a>
 						</li>
 						<li class="nav-item">
@@ -115,6 +115,7 @@
 					</ul>
 				</div>
 			</div>
+		</div>
 	</nav>
 
 	<main>
@@ -155,6 +156,7 @@
 	</script>
 
 	<!-- App js -->
+	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('js/app.min.js') }}"></script>
 	<noscript>Veuillez activer JavaScript svp !</noscript>
 

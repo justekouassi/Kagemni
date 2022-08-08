@@ -33,9 +33,8 @@
 											<th scope="col">#</th>
 											<th scope="col">Enseignants</th>
 											<th scope="col">Etudiants</th>
-											<th scope="col">Classe</th>
-											<th scope="col">Thème</th>
-											{{-- <th scope="col">Action</th> --}}
+											<th scope="col">Classes</th>
+											<th scope="col">Thèmes</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -63,10 +62,9 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-
 	</div>
-	@endsection
+
+@endsection
