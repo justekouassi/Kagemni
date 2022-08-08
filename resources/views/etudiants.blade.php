@@ -22,27 +22,30 @@
 									<thead>
 										<tr>
 											<th scope="col">N°</th>
-											<th scope="col">Nom</th>
-											<th scope="col">Prenoms</th>
-											<th scope="col">Email</th>
-											<th scope="col">Numéro de téléphone</th>
+											<th scope="col">Nom et prénoms</th>
+											<th scope="col">Sexe</th>
 											<th scope="col">Classe</th>
-											<th scope="col">Thème</th>
+											<th scope="col">Email</th>
+											<th scope="col">Téléphone</th>
 											<th scope="col">Action</th>
 										</tr>
 									</thead>
 									<tbody>
 
-										<?php $etudiants = \App\Models\Etudiant::all(); ?>
+										<?php // $etudiants = \App\Models\Etudiant::all(); ?>
+										<?php $etudiants = \App\Models\Etudiant::join('classes',
+											'etudiants.id_classe', '=', 'classes.id') -> get([
+												'etudiants.*',
+												'classes.libelle_classe'
+											]); ?>
 										@foreach ($etudiants as $etudiant)
 											<tr>
 												<th scope="row">{{$etudiant->id}}</th>
-												<td>{{$etudiant->nom_etudiant}}</td>
-												<td>{{$etudiant->prenoms_etudiant}}</td>
+												<td>{{$etudiant->nom_etudiant}} {{$etudiant->prenoms_etudiant}}</td>
+												<td>{{$etudiant->sexe_etudiant}}</td>
+												<td>{{$etudiant->libelle_classe}}</td>
 												<td>{{$etudiant->email_etudiant}}</td>
 												<td>{{$etudiant->tel_etudiant}}</td>
-												<td></td>
-												<td></td>
 												<td>
 													<form action="/etudiants/{{$etudiant->id}}" method="POST">
 														{{ csrf_field() }}

@@ -59,7 +59,7 @@
 										<div class="form-group row">
 											<label class="col-lg-2 col-form-label" for="tel">Téléphone</label>
 											<div class="col-lg-10">
-												<input required type="text" name="tel" class="form-control" id="tel" placeholder="+225 0748502093" value="{{$enseignant->tel_enseignant}}">
+												<input required type="tel" name="tel" class="form-control" id="tel" placeholder="0748502093" pattern="[0-9]{10}" value="{{$enseignant->tel_enseignant}}">
 											</div>
 										</div>
 										<div class="form-group row">

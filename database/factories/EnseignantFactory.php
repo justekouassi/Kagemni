@@ -19,7 +19,7 @@ class EnseignantFactory extends Factory
 		return [
 			'nom_enseignant' => fake()->word(),
 			'prenoms_enseignant' => fake()->name(),
-			'sexe_enseignant' => 'Masculin',
+			'sexe_enseignant' => fake()->randomElement(['Masculin', 'Féminin']),
 			'tel_enseignant' => fake()->numberBetween(123456780, 987654320),
 			'email_enseignant' => fake()->safeEmail(),
 		];

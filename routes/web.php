@@ -123,11 +123,4 @@ Route::group([
 	Route::get('/encadrements', function () {
 		return view('encadrements');
 	});
-	Route::get('/encadrements/create', function () {
-		return view('encadrements-create');
-	});
-	Route::post('/encadrements/create', [ThemeController::class, 'ajouter']);
-	Route::get('/encadrements/{id}/edit', [ThemeController::class, 'consulter']);
-	Route::post('/encadrements/{id}/edit', [ThemeController::class, 'modifier']);
-	Route::get('/encadrements/{id}/delete', [ThemeController::class, 'supprimer']);
 });

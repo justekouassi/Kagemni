@@ -14,6 +14,6 @@ class EnseignantSeeder extends Seeder
 	 */
 	public function run()
 	{
-		Enseignant::factory(30)->create();
+		Enseignant::factory(30)->create('fr-FR');
 	}
 }

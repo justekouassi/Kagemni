@@ -89,6 +89,12 @@
 							</a>
 						</li>
 						<li class="nav-item">
+							<a class="nav-link" href="/encadrements">
+								<i class="bi bi-star"></i>
+								<span> Encadrements </span>
+							</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="/projets">
 								<i class="bi bi-pencil-square"></i>
 								<span> Projets enseignants </span>
