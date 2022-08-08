@@ -7,6 +7,7 @@ use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\ContactController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -124,3 +125,6 @@ Route::group([
 		return view('encadrements');
 	});
 });
+
+Route::get('contact-form', [ContactController::class, 'create']);
+Route::post('contact-form', [ContactController::class, 'store']);
