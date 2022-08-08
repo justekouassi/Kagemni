@@ -18,7 +18,7 @@ return new class extends Migration
       $table->id();
       $table->string('nom_etudiant');
       $table->string('prenoms_etudiant');
-      $table->string('sexe_etudiant');
+      $table->string('sexe_etudiant')->default('Masculin');
       $table->integer('tel_etudiant');
       $table->string('email_etudiant');
       $table->unsignedBigInteger('id_classe');

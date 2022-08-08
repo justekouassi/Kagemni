@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Administrateur;
 
+/**
+ * L'ensemble des fonctions associées à la connexion
+ */
 class ConnexionController extends Controller
 {
 	/**
@@ -19,7 +22,7 @@ class ConnexionController extends Controller
     $administrateur = Administrateur::create([
       "email_admin" => request("email"),
       "motdepasse_admin" => bcrypt(request("password")),
-      "avatar" => request("avatar")->store('avatars'),
+      "avatar" => request("avatar")->store('avatars', 'public'),
     ]);
 
     return view("index");

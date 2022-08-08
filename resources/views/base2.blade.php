@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="#fff"/>
 	<meta name="author" content="Juste KOUASSI"/>
 	<meta name="copyright" content="Tout droit réservé à Juste KOUASSI sur ce site web"/>
@@ -20,24 +20,23 @@
 	<link rel="manifest" href="{{ asset('images/favicon_io/site.webmanifest') }}">
 
 	<!-- Bootstrap css -->
-	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+	<!-- Plugins css -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('libs/flatpickr/flatpickr.min.css') }}"/>
+
+	<!-- Perso css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}"/>
-	<link href="{{ asset('css/jquery.dataTables.min.css') }}"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
 
-	<!-- plugins -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('libs/flatpickr/flatpickr.min.css') }}" />
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/accueil">
+			<a class="navbar-brand" href="/accueil" style="margin: auto">
 				<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30"/>
 				&nbsp;KAGEMNI
 			</a>
@@ -52,24 +51,11 @@
 				</div>
 				<div class="offcanvas-body">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						{{-- <li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-								aria-expanded="false">
-								Dropdown
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li>
-									<hr class="dropdown-divider">
-								</li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
-							</ul>
-						</li> --}}
-
-						<img src="/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" />
-						<h6 class="mt-0 mb-0">Admin</h6>
-						<span class="pro-user-desc">{{ auth()->user()->email_admin }}</span>
+						<div style="display: column; margin-block: 40px">
+							<img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/>
+							<span class="nav-link" style="margin: auto">{{ auth()->user()->email_admin }}</span>
+						</div>
+						
 						<li class="menu-title">Navigation</li>
 						<li>
 							<a class="nav-link" href="/accueil">
@@ -143,6 +129,7 @@
 	<!-- Vendor js -->
 	<script src="{{ asset('js/vendor.min.js') }}"></script>
 
+	<!-- Bootstrap js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
 	<!-- optional plugins -->
@@ -152,12 +139,7 @@
 
 	<!-- page js -->
 	<script src="{{ asset('js/pages/dashboard.init.js') }}"></script>
-
-	<!-- App js -->
-	<script src="{{ asset('js/app.min.js') }}"></script>
-
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	
 	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 
 	<script>
@@ -166,9 +148,9 @@
 		});
 	</script>
 
-	<noscript>
-		<h1>Veuillez activer JavaScript svp !</h1>
-	</noscript>
+	<!-- App js -->
+	<script src="{{ asset('js/app.min.js') }}"></script>
+	<noscript>Veuillez activer JavaScript svp !</noscript>
 
 </body>
 

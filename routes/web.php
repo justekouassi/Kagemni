@@ -7,7 +7,7 @@ use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\ThemeController;
-use GuzzleHttp\Middleware;
+
 use Illuminate\Support\Facades\Route;
 
 /* Routes de connexion */
@@ -117,4 +117,17 @@ Route::group([
 	Route::post('/themes/{id}/edit', [ThemeController::class, 'modifier']);
 	Route::get('/themes/{id}/delete', [ThemeController::class, 'supprimer']);
 
+
+	/* Routes encadrements */
+
+	Route::get('/encadrements', function () {
+		return view('encadrements');
+	});
+	Route::get('/encadrements/create', function () {
+		return view('encadrements-create');
+	});
+	Route::post('/encadrements/create', [ThemeController::class, 'ajouter']);
+	Route::get('/encadrements/{id}/edit', [ThemeController::class, 'consulter']);
+	Route::post('/encadrements/{id}/edit', [ThemeController::class, 'modifier']);
+	Route::get('/encadrements/{id}/delete', [ThemeController::class, 'supprimer']);
 });

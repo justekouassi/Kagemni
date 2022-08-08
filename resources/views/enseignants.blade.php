@@ -23,8 +23,8 @@
 											<th scope="col">N°</th>
 											<th scope="col">Nom et Prénoms</th>
 											<th scope="col">Email</th>
-											<th scope="col" style="width: 20px">Numéro de téléphone</th>
-											<th scope="col">Action</th>
+											<th scope="col" style="width: 20px">Téléphone</th>
+											<th scope="col">Actions</th>
 										</tr>
 									</thead>
 									<tbody>

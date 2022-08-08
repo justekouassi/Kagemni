@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom_enseignant');
             $table->string('prenoms_enseignant');
-            $table->string('sexe_enseignant');
+            $table->string('sexe_enseignant')->default('Masculin');
             $table->integer('tel_enseignant');
             $table->string('email_enseignant');
             $table->unsignedBigInteger('id_cours')->index()->nullable();
