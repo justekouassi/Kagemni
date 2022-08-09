@@ -13,7 +13,7 @@
 						<div class="card">
 							<div class="card-body">
 								<div class="titre-ajout mb-2">
-									<h4 class="header-title mt-0 mb-1">Liste des thèmes </h4>
+									<h4 class="header-title mt-0 mb-1">Liste des thèmes</h4>
 									<a class="ml-auto btn btn-primary" href="/themes/create">Ajouter</a>
 								</div>
 
@@ -22,23 +22,31 @@
 										<thead>
 											<tr>
 												<th scope="col">N°</th>
+												<th scope="col">Etudiant</th>
 												<th scope="col">Titre</th>
-												<th scope="col">Description</th>
+												<th scope="col">Début</th>
+												<th scope="col">Fin</th>
 												<th scope="col">Actions</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php $themes = \App\Models\Theme::all(); ?>
+											<?php $themes = \App\Models\Etudiant::join('themes',
+											'etudiants.id_theme', '=', 'themes.id') -> get([
+												'etudiants.*',
+												'themes.libelle_theme',
+											]); ?>
 											@foreach ($themes as $theme)
 												<tr>
 													<th scope="row">{{$theme->id}}</th>
+													<td>{{$theme->nom_etudiant}} {{$theme->prenoms_etudiant}}</td>
 													<td>{{$theme->libelle_theme}}</td>
 													<td></td>
+													<td></td>
 													<td>
-														<a href="/themes/{{$theme->id}}/edit" class="btn btn-primary btn-sm confirmation">
+														<a href="/themes/{{$theme->id}}/edit" class="btn btn-primary btn-sm">
 															<i class="bi bi-pencil-square"></i>
 														</a>
-														<a href="/themes/{{$theme->id}}/delete" class="btn btn-danger btn-sm">
+														<a href="/themes/{{$theme->id}}/delete" class="btn btn-danger btn-sm suppression">
 															<i class="bi bi-trash"></i>
 														</a>
 													</td>

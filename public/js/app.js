@@ -1,19 +1,18 @@
-let text = "Etes-vous 2 sûr de supprimer cet utilisateur ?\nTous ses projets, ses cours et ses encadrements disparaîtront avec lui."
-var elems = document.getElementsByClassName('confirmation');
+let text1 = "Etes-vous sûr de vouloir supprimer cet élément ?"
+var elems = document.getElementsByClassName('suppression');
 for (var i = 0, l = elems.length; i < l; i++) {
 	elems[i].onclick = function() {
-		return confirm(text);
+		return confirm(text1);
 	};
 }
 
-
-// var elems = document.getElementsByClassName('confirmation');
-// var confirmIt = function (e) {
-// 	if (!confirm(text)) e.preventDefault();
-// };
-// for (var i = 0, l = elems.length; i < l; i++) {
-// 	elems[i].addEventListener('click', confirmIt, false);
-// }
+let text2 = "Voulez-vous enregistrer les modifications ?"
+var elems = document.getElementsByClassName('modification');
+for (var i = 0, l = elems.length; i < l; i++) {
+	elems[i].onclick = function() {
+		return confirm(text2);
+	};
+}
 
 // // import './bootstrap'
 

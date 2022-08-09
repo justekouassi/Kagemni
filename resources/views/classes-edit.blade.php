@@ -52,7 +52,7 @@
                         <input required type="text" class="form-control" id="annee" name="annee" value="{{$classe->annee_scolaire}}">
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Modifier</button>
+                    <button type="submit" class="btn btn-primary modification">Modifier</button>
                   </div>
                 </div>
               </form>

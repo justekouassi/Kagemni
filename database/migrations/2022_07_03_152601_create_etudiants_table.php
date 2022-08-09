@@ -19,7 +19,7 @@ return new class extends Migration
       $table->string('nom_etudiant');
       $table->string('prenoms_etudiant');
       $table->string('sexe_etudiant')->default('Masculin');
-      $table->integer('tel_etudiant');
+      $table->bigInteger('tel_etudiant')->unique();
       $table->string('email_etudiant');
       $table->unsignedBigInteger('id_classe');
       $table->unsignedBigInteger('id_theme');

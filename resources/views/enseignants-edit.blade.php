@@ -20,7 +20,6 @@
 							<li class="breadcrumb-item active" aria-current="page"><a>Ajouter</a></li>
 						</ol>
 					</nav>
-					<h4 class="mb-1 mt-0">Enseignants</h4>
 				</div>
 			</div>
 			<div class="row">
@@ -28,7 +27,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex mb-2">
-								<h4 class="header-title mt-0 mb-1">Ajouter un enseignant</h4>
+								<h4 class="header-title mt-0 mb-1">Modification d'un enseignant</h4>
 							</div>
 
 							<?php $enseignants = \App\Models\Enseignant::all(); ?>
@@ -52,8 +51,12 @@
 										</div>
 										<div class="form-group row">
 											<label class="col-lg-2 col-form-label" for="sexe">Sexe</label>
-											<div class="col-lg-10">
-												<input required type="text" class="form-control" id="sexe" name="sexe" value="{{$enseignant->sexe_enseignant}}">
+											<div class="col-lg-10" style="margin-bottom: 11px">
+												<select required name="sexe" class="form-select" id="sexe">
+													<option value="{{$enseignant->sexe_enseignant}}" selected>{{$enseignant->sexe_enseignant}}</option>
+													<option value="Masculin">Masculin</option>
+													<option value="Féminin">Féminin</option>
+												</select>
 											</div>
 										</div>
 										<div class="form-group row">
@@ -68,7 +71,7 @@
 												<input required type="email" class="form-control" id="email" name="email" value="{{$enseignant->email_enseignant}}">
 											</div>
 										</div>
-										<button type="submit" class="btn btn-primary">Modifier</button>
+										<button type="submit" class="btn btn-primary modification">Modifier</button>
 									</div>
 								</div>
 							</form>

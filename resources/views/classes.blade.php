@@ -42,7 +42,7 @@
 													<a href="/classes/{{$classe->id}}/edit" class="btn btn-primary btn-sm">
 														<i class="bi bi-pencil-square"></i>
 													</a>
-													<a href="/classes/{{$classe->id}}/delete" class="btn btn-danger btn-sm confirmation">
+													<a href="/classes/{{$classe->id}}/delete" class="btn btn-danger btn-sm suppression">
 														<i class="bi bi-trash"></i>
 													</a>
 												</td>

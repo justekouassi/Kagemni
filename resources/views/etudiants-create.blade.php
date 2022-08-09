@@ -45,9 +45,13 @@
                     </div>
                     <div class="form-group row">
                       <label class="col-lg-2 col-form-label" for="sexe">Sexe</label>
-                      <div class="col-lg-10">
-                        <input required type="text" class="form-control" id="sexe" name="sexe">
-                      </div>
+                      <div class="col-lg-10" style="margin-bottom: 11px">
+												<select required name="sexe" class="form-select" id="sexe">
+													<option value="" selected disabled>* Non défini *</option>
+													<option value="Masculin">Masculin</option>
+													<option value="Féminin">Féminin</option>
+												</select>
+											</div>
                     </div>
                     <div class="form-group row">
                       <label class="col-lg-2 col-form-label" for="tel">Téléphone</label>

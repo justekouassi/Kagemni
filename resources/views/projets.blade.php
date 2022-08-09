@@ -22,6 +22,7 @@
 									<thead>
 										<tr>
 											<th scope="col">N°</th>
+											<th scope="col">Enseignant</th>
 											<th scope="col">Titre</th>
 											<th scope="col">Début</th>
 											<th scope="col">Fin</th>
@@ -29,18 +30,25 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php $projets = \App\Models\Projet::all(); ?>
+										<?php $projets = \App\Models\Enseignant::join('projets',
+											'enseignants.id_projet', '=', 'projets.id') -> get([
+												'enseignants.*',
+												'projets.libelle_projet',
+												'projets.debut_projet',
+												'projets.fin_projet',
+											]); ?>
 										@foreach ($projets as $projet)
 											<tr>
 												<th scope="row">{{$projet->id}}</th>
+												<td>{{$projet->nom_enseignant}} {{$projet->prenoms_enseignant}}</td>
 												<td>{{$projet->libelle_projet}}</td>
 												<td>{{$projet->debut_projet}}</td>
 												<td>{{$projet->fin_projet}}</td>
 												<td>
-													<a href="/projets/{{$projet->id}}/edit" class="btn btn-primary btn-sm confirmation">
+													<a href="/projets/{{$projet->id}}/edit" class="btn btn-primary btn-sm">
 														<i class="bi bi-pencil-square"></i>
 													</a>
-													<a href="/projets/{{$projet->id}}/delete" class="btn btn-danger btn-sm">
+													<a href="/projets/{{$projet->id}}/delete" class="btn btn-danger btn-sm suppression">
 														<i class="bi bi-trash"></i>
 													</a>
 												</td>
