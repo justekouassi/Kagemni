@@ -23,9 +23,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-	<!-- Plugins css -->
+	<!-- Jquery css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}"/>
-	<link rel="stylesheet" type="text/css" href="{{ asset('libs/flatpickr/flatpickr.min.css') }}"/>
 
 	<!-- Perso css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}"/>
@@ -34,7 +33,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<nav class="navbar navbar-expand-lg bg-light fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/accueil" style="margin: auto">
 				<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30"/>
@@ -51,6 +50,7 @@
 				</div>
 				<div class="offcanvas-body">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					{{-- <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> --}}
 						<div style="display: column; margin-block: 40px">
 							<img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/>
 							<span class="nav-link" style="margin: auto">{{ auth()->user()->email_admin }}</span>
@@ -122,7 +122,7 @@
 		@yield('content')
 	</main>
 
-	<!-- Footer Start -->
+	<!-- Footer -->
 	<footer class="footer" style="margin-left: 60px">
 		<div class="container-fluid">
 			<div class="row">
@@ -139,16 +139,8 @@
 	<!-- Bootstrap js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
-	<!-- optional plugins -->
-	<script src="{{ asset('libs/moment/moment.min.js') }}"></script>
-	<script src="{{ asset('libs/apexcharts/apexcharts.min.js') }}"></script>
-	<script src="{{ asset('libs/flatpickr/flatpickr.min.js') }}"></script>
-
-	<!-- page js -->
-	<script src="{{ asset('js/pages/dashboard.init.js') }}"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<!-- Jquery js -->
 	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-
 	<script>
 		$(document).ready(function () {
 			$('.table').DataTable();
@@ -156,8 +148,8 @@
 	</script>
 
 	<!-- App js -->
-	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('js/app.min.js') }}"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
 	<noscript>Veuillez activer JavaScript svp !</noscript>
 
 </body>

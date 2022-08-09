@@ -2,8 +2,7 @@ nav {
 	float: left;
 }
 
-.navbar,
-.navbar-collapse {
+.navbar {
 	flex-direction: column;
 }
 
@@ -23,7 +22,7 @@ nav {
 }
 
 .navbar .container-fluid,
-.navbar-expand-lg .navbar-collapse,
+.navbar-expand-lg,
 .navbar-expand-lg .navbar-nav {
 	flex-direction: column;
 	align-items: flex-start;
