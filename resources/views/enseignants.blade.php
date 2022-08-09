@@ -32,7 +32,6 @@
 
 										<?php $enseignants = \App\Models\Enseignant::all(); ?>
 										@foreach ($enseignants as $enseignant)
-
 											<tr>
 												<th scope="row">{{$enseignant->id}}</th>
 												<td>{{$enseignant->nom_enseignant}} {{$enseignant->prenoms_enseignant}}</td>
@@ -44,7 +43,7 @@
 														class="btn btn-primary btn-sm">
 														<i class="bi bi-pencil-square"></i>
 													</a>
-													<a href="/enseignants/{{$enseignant->id}}/delete" class="btn btn-danger btn-sm">
+													<a href="/enseignants/{{$enseignant->id}}/delete" class="btn btn-danger btn-sm confirmation">
 														<i class="bi bi-trash"></i>
 													</a>
 													<a href="/enseignants/{{$enseignant->id}}/encadrements" class="btn btn-success btn-sm">
@@ -61,11 +60,9 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 

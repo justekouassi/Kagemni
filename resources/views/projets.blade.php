@@ -37,7 +37,7 @@
 												<td>{{$projet->debut_projet}}</td>
 												<td>{{$projet->fin_projet}}</td>
 												<td>
-													<a href="/projets/{{$projet->id}}/edit" class="btn btn-primary btn-sm">
+													<a href="/projets/{{$projet->id}}/edit" class="btn btn-primary btn-sm confirmation">
 														<i class="bi bi-pencil-square"></i>
 													</a>
 													<a href="/projets/{{$projet->id}}/delete" class="btn btn-danger btn-sm">

@@ -24,7 +24,7 @@ class MatiereController extends Controller
 			"email_matiere" => request("email"),
 		]);
 
-		return view("matieres");
+		return redirect("/matieres");
 	}
 	
 	public function consulter()
@@ -56,7 +56,7 @@ class MatiereController extends Controller
 			"email_matiere" => request("email"),
 		]);
 
-		return view("matieres");
+		return redirect("/matieres");
 	}
 
 	public function supprimer()
@@ -65,6 +65,6 @@ class MatiereController extends Controller
 		$matiere = matiere::where('id', $id)->first();
 		$matiere->delete();
 
-		return view("matieres");
+		return redirect("/matieres");
 	}
 }

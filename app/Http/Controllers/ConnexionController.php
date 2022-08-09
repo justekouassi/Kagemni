@@ -25,7 +25,7 @@ class ConnexionController extends Controller
       "avatar" => request("avatar")->store('avatars', 'public'),
     ]);
 
-    return view("index");
+    return redirect('/');
 	}
 
 	/**
@@ -84,6 +84,6 @@ class ConnexionController extends Controller
       "motdepasse_admin" => bcrypt(request("password")),
 		]);
 
-		return view("index");
+    return redirect('/');
 	}
 }

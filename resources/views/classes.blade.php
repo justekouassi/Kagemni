@@ -14,8 +14,7 @@
 						<div class="card-body">
 							<div class="mb-2 titre-ajout">
 								<h4 class="header-title mt-0 mb-1">Liste des classes </h4>
-								<a class="ml-auto btn btn-primary"
-									href="/classes/create">Ajouter</a>
+								<a class="ml-auto btn btn-primary" href="/classes/create">Ajouter</a>
 							</div>
 
 							<div class="table-responsive">
@@ -31,7 +30,6 @@
 										</tr>
 									</thead>
 									<tbody>
-
 										<?php $classes = \App\Models\Classe::all(); ?>
 										@foreach ($classes as $classe)
 											<tr>
@@ -41,16 +39,12 @@
 												<td>{{$classe->ecole}}</td>
 												<td>{{$classe->annee_scolaire}}</td>
 												<td>
-													<form method="POST" action="/classes/{{$classe->id}}">
-														{{ csrf_field() }}
-														
-														<a href="/classes/{{$classe->id}}/edit" class="btn btn-primary btn-sm">
-															<i class="bi bi-pencil-square"></i>
-														</a>
-														<a href="/classes/{{$classe->id}}/delete" class="btn btn-danger btn-sm">
-															<i class="bi bi-trash"></i>
-														</a>
-													</form>
+													<a href="/classes/{{$classe->id}}/edit" class="btn btn-primary btn-sm">
+														<i class="bi bi-pencil-square"></i>
+													</a>
+													<a href="/classes/{{$classe->id}}/delete" class="btn btn-danger btn-sm confirmation">
+														<i class="bi bi-trash"></i>
+													</a>
 												</td>
 											</tr>
 										@endforeach
@@ -59,11 +53,9 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 

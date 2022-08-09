@@ -126,5 +126,5 @@ Route::group([
 	});
 });
 
-Route::get('contact-form', [ContactController::class, 'create']);
-Route::post('contact-form', [ContactController::class, 'store']);
+// Route::get('contact-form', [ContactController::class, 'create']);
+// Route::post('contact-form', [ContactController::class, 'store']);

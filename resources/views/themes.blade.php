@@ -35,7 +35,7 @@
 													<td>{{$theme->libelle_theme}}</td>
 													<td></td>
 													<td>
-														<a href="/themes/{{$theme->id}}/edit" class="btn btn-primary btn-sm">
+														<a href="/themes/{{$theme->id}}/edit" class="btn btn-primary btn-sm confirmation">
 															<i class="bi bi-pencil-square"></i>
 														</a>
 														<a href="/themes/{{$theme->id}}/delete" class="btn btn-danger btn-sm">

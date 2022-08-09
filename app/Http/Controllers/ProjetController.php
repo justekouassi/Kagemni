@@ -20,7 +20,7 @@ class ProjetController extends Controller
 			"fin_projet" => request("fin"),
 		]);
 
-		return view("projets");
+		return redirect("/projets");
 	}
 	
 	public function consulter()
@@ -48,7 +48,7 @@ class ProjetController extends Controller
 			"fin_projet" => request("fin"),
 		]);
 
-		return view("projets");
+		return redirect("/projets");
 	}
 
 	public function supprimer()
@@ -57,6 +57,6 @@ class ProjetController extends Controller
 		$projet = Projet::where('id', $id)->first();
 		$projet->delete();
 
-		return view("projets");
+		return redirect("/projets");
 	}
 }

@@ -24,7 +24,7 @@ class EnseignantController extends Controller
 			"email_enseignant" => request("email"),
 		]);
 
-		return view("enseignants");
+		return redirect('/enseignants');
 	}
 
 	public function consulter()
@@ -56,7 +56,7 @@ class EnseignantController extends Controller
 			"email_enseignant" => request("email"),
 		]);
 
-		return view("enseignants");
+		return redirect('/enseignants');
 	}
 
 	public function supprimer()
@@ -65,6 +65,6 @@ class EnseignantController extends Controller
 		$enseignant = Enseignant::where('id', $id)->first();
 		$enseignant->delete();
 
-		return view("enseignants");
+		return redirect('/enseignants');
 	}
 }

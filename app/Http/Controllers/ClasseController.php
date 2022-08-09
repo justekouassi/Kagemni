@@ -22,7 +22,7 @@ class ClasseController extends Controller
 			"annee_scolaire" => request("annee"),
 		]);
 
-		return view("classes");
+		return redirect('/classes');
 	}
 	
 	public function consulter()
@@ -52,7 +52,7 @@ class ClasseController extends Controller
 			"annee_scolaire" => request("annee"),
 		]);
 
-		return view("classes");
+		return redirect('/classes');
 	}
 
 	public function supprimer()
@@ -61,6 +61,6 @@ class ClasseController extends Controller
 		$classe = Classe::where('id', $id)->first();
 		$classe->delete();
 
-		return view("classes");
+		return redirect('/classes');
 	}
 }

@@ -1,3 +1,20 @@
+let text = "Etes-vous 2 sûr de supprimer cet utilisateur ?\nTous ses projets, ses cours et ses encadrements disparaîtront avec lui."
+var elems = document.getElementsByClassName('confirmation');
+for (var i = 0, l = elems.length; i < l; i++) {
+	elems[i].onclick = function() {
+		return confirm(text);
+	};
+}
+
+
+// var elems = document.getElementsByClassName('confirmation');
+// var confirmIt = function (e) {
+// 	if (!confirm(text)) e.preventDefault();
+// };
+// for (var i = 0, l = elems.length; i < l; i++) {
+// 	elems[i].addEventListener('click', confirmIt, false);
+// }
+
 // // import './bootstrap'
 
 // const ecole = document.getElementById('ecole')

@@ -16,7 +16,7 @@ class ThemeController extends Controller
 			"libelle_theme" => request("theme"),
 		]);
 
-		return view("themes");
+		return redirect("/themes");
 	}
 
 	public function consulter()
@@ -40,7 +40,7 @@ class ThemeController extends Controller
 			"libelle_theme" => request("theme"),
 		]);
 
-		return view("themes");
+		return redirect("/themes");
 	}
 
 	public function supprimer()
@@ -49,6 +49,6 @@ class ThemeController extends Controller
 		$theme = Theme::where('id', $id)->first();
 		$theme->delete();
 
-		return view("themes");
+		return redirect("/themes");
 	}
 }

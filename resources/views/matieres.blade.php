@@ -37,7 +37,7 @@
 												<a href="matieres/1/edit" class="btn btn-primary btn-sm">
 													<i class="bi bi-pencil-square"></i>
 												</a>
-												<a href="matieres/1/delete" class="btn btn-danger btn-sm">
+												<a href="matieres/1/delete" class="btn btn-danger btn-sm confirmation">
 													<i class="bi bi-trash"></i>
 												</a>
 											</td>
