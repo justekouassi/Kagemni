@@ -16,8 +16,5 @@ class Enseignant extends Model
 		'sexe_enseignant',
 		'tel_enseignant',
 		'email_enseignant',
-		'id_cours',
-		'id_etudiant',
-		'id_projet',
 	];
 }

@@ -21,11 +21,20 @@ return new class extends Migration
 			$table->time('heure_debut');
 			$table->time('heure_fin');
 			$table->unsignedBigInteger('id_classe');
+			$table->unsignedBigInteger('id_enseignant');
+			
 			$table->foreign('id_classe')
 				->references('id')
 				->on('classes')
 				->onDelete('cascade')
 				->onUpdate('cascade');
+
+			$table->foreign('id_enseignant')
+				->references('id')
+				->on('enseignants')
+				->onDelete('cascade')
+				->onUpdate('cascade');
+
 			$table->timestamps();
 		});
 	}

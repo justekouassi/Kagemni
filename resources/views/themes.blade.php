@@ -30,8 +30,8 @@
 											</tr>
 										</thead>
 										<tbody>
-											<?php $themes = \App\Models\Etudiant::join('themes',
-											'etudiants.id_theme', '=', 'themes.id') -> get([
+											<?php $themes = \App\Models\Theme::join('etudiants',
+											'themes.id_etudiant', '=', 'etudiants.id') -> get([
 												'etudiants.*',
 												'themes.libelle_theme',
 											]); ?>

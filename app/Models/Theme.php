@@ -12,5 +12,6 @@ class Theme extends Model
 	protected $fillable = [
 		'id_theme',
 		'libelle_theme',
+		'id_etudiant',
 	];
 }

@@ -13,9 +13,16 @@ return new class extends Migration
 	 */
 	public function up()
 	{
+		Schema::disableForeignKeyConstraints();
 		Schema::create('themes', function (Blueprint $table) {
 			$table->id();
 			$table->string('libelle_theme')->unique();
+			$table->unsignedBigInteger('id_etudiant');
+			$table->foreign('id_etudiant')
+				->references('id')
+				->on('etudiants')
+				->onDelete('cascade')
+				->onUpdate('cascade');
 			$table->timestamps();
 		});
 	}

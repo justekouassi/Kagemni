@@ -17,6 +17,6 @@ class Etudiant extends Model
 		'tel_etudiant',
 		'email_etudiant',
 		'id_classe',
-		'id_theme',
+		'id_enseignant',
 	];
 }

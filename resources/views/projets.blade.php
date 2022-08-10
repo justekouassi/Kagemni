@@ -30,13 +30,13 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php $projets = \App\Models\Enseignant::join('projets',
-											'enseignants.id_projet', '=', 'projets.id') -> get([
-												'enseignants.*',
-												'projets.libelle_projet',
-												'projets.debut_projet',
-												'projets.fin_projet',
-											]); ?>
+										<?php $projets = \App\Models\Projet::join('enseignants',
+										'projets.id_enseignant', '=', 'enseignants.id') -> get([
+											'enseignants.*',
+											'projets.libelle_projet',
+											'projets.debut_projet',
+											'projets.fin_projet',
+										]); ?>
 										@foreach ($projets as $projet)
 											<tr>
 												<th scope="row">{{$projet->id}}</th>

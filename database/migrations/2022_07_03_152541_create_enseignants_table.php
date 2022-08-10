@@ -21,28 +21,6 @@ return new class extends Migration
 			$table->string('sexe_enseignant')->default('Masculin');
 			$table->bigInteger('tel_enseignant')->unique();
 			$table->string('email_enseignant');
-			$table->unsignedBigInteger('id_cours')->index()->nullable();
-			$table->unsignedBigInteger('id_etudiant')->index()->nullable();
-			$table->unsignedBigInteger('id_projet')->index()->nullable();
-
-			$table->foreign('id_cours')
-				->references('id')
-				->on('cours')
-				->onDelete('cascade')
-				->onUpdate('cascade');
-
-			$table->foreign('id_etudiant')
-				->references('id')
-				->on('etudiants')
-				->onDelete('cascade')
-				->onUpdate('cascade');
-
-			$table->foreign('id_projet')
-				->references('id')
-				->on('projets')
-				->onDelete('cascade')
-				->onUpdate('cascade');
-
 			$table->timestamps();
 		});
 	}

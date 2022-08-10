@@ -38,13 +38,17 @@
 										</tr>
 									</thead>
 									<tbody>
-
-										<?php $encadrements = \App\Models\Enseignant::join('etudiants',
-											'enseignants.id_etudiant', '=', 'etudiants.id') -> join('classes', 'etudiants.id_classe', '=', 'classes.id') -> join('themes', 'etudiants.id_theme', '=', 'themes.id') -> get([
-												'enseignants.*',
+										<?php 
+										$encadrements = \App\Models\Theme::join('etudiants', 'themes.id_etudiant', '=', 'etudiants.id') 
+											-> join('enseignants', 'etudiants.id_enseignant', '=', 'enseignants.id') 
+											-> join('classes', 'etudiants.id_classe', '=', 'classes.id') 
+											-> get([
+												'enseignants.nom_enseignant',
+												'enseignants.prenoms_enseignant',
 												'etudiants.nom_etudiant',
 												'etudiants.prenoms_etudiant',
 												'classes.libelle_classe',
+												'themes.id',
 												'themes.libelle_theme',
 											]);
 										?>
