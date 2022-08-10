@@ -28,12 +28,6 @@ nav {
 	align-items: flex-start;
 }
 
-@media screen and (max-width: 500px) {
-	.navbar-brand {
-		display: none;
-	}
-}
-
 main {
 	margin-right: 50px;
 	text-align: justify;
@@ -46,4 +40,19 @@ main {
 
 form input {
 	margin-bottom: 0.7em;
+}
+
+@media screen and (max-width: 1045px) {
+	.navbar {
+		display: none;
+	}
+	main {
+		margin-right: 5px;
+		text-align: justify;
+	}
+}
+@media screen and (max-width: 500px) {
+	.navbar-brand {
+		display: none;
+	}
 }

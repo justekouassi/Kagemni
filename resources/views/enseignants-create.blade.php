@@ -15,7 +15,7 @@
         <div class="col-md-12">
           <nav aria-label="breadcrumb" class="float-right mt-1">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+              <li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
               <li class="breadcrumb-item"><a href="/enseignants">Enseignants</a></li>
               <li class="breadcrumb-item active" aria-current="page"><a>Ajouter</a></li>
             </ol>

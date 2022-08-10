@@ -123,7 +123,7 @@
 	</main>
 
 	<!-- Footer -->
-	<footer class="footer" style="margin-left: 60px">
+	<footer class="footer">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12">

@@ -7,6 +7,16 @@
 <div class="content-page">
 	<div class="content">
 		<div class="container-fluid">
+			<div class="row page-title">
+				<div class="col-md-12">
+					<nav aria-label="breadcrumb" class="float-right mt-1">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+							<li class="breadcrumb-item active" aria-current="page"><a>Cours</a></li>
+						</ol>
+					</nav>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="card">
@@ -39,7 +49,7 @@
 												'enseignants.nom_enseignant',
 												'enseignants.prenoms_enseignant',
 												'classes.libelle_classe',
-											]) -> sortByDesc->date_cours;
+											]) -> sortBy->date_cours;
 										?>
 										@foreach ($cours as $cour)
 											<tr>
