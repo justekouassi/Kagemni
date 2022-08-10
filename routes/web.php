@@ -4,7 +4,7 @@ use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\EtudiantController;
-use App\Http\Controllers\MatiereController;
+use App\Http\Controllers\CoursController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\ContactController;
@@ -28,7 +28,7 @@ Route::post('/nouveau-mdp', [ConnexionController::class, 'nouveauMdp']);
 
 Route::group([
 	'middleware' => 'auth',
-], function() {
+], function () {
 
 	Route::get('/accueil', function () {
 		return view('accueil');
@@ -63,20 +63,6 @@ Route::group([
 	Route::get('/etudiants/{id}/delete', [EtudiantController::class, 'supprimer']);
 
 
-	/* Routes matieres */
-
-	Route::get('/matieres', function () {
-		return view('matieres');
-	});
-	Route::get('/matieres/create', function () {
-		return view('matieres-create');
-	});
-	Route::post('/matieres/create', [MatiereController::class, 'ajouter']);
-	Route::get('/matieres/{id}/edit', [MatiereController::class, 'consulter']);
-	Route::post('/matieres/{id}/edit', [MatiereController::class, 'modifier']);
-	Route::get('/matieres/{id}/delete', [MatiereController::class, 'supprimer']);
-
-
 	/* Routes classes */
 
 	Route::get('/classes', function () {
@@ -89,6 +75,20 @@ Route::group([
 	Route::get('/classes/{id}/edit', [ClasseController::class, 'consulter']);
 	Route::post('/classes/{id}/edit', [ClasseController::class, 'modifier']);
 	Route::get('/classes/{id}/delete', [ClasseController::class, 'supprimer']);
+
+
+	/* Routes cours */
+
+	Route::get('/cours', function () {
+		return view('cours');
+	});
+	Route::get('/cours/create', function () {
+		return view('cours-create');
+	});
+	Route::post('/cours/create', [CoursController::class, 'ajouter']);
+	Route::get('/cours/{id}/edit', [CoursController::class, 'consulter']);
+	Route::post('/cours/{id}/edit', [CoursController::class, 'modifier']);
+	Route::get('/cours/{id}/delete', [CoursController::class, 'supprimer']);
 
 
 	/* Routes projets */

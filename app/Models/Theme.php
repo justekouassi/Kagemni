@@ -10,7 +10,6 @@ class Theme extends Model
 	use HasFactory;
 
 	protected $fillable = [
-		'id_theme',
 		'libelle_theme',
 		'id_etudiant',
 	];

@@ -27,8 +27,6 @@
                 <h4 class="header-title mt-0 mb-1">Modifier un projet</h4>
               </div>
 
-							<?php $projets = \App\Models\Projet::all(); ?>
-
               <form method="post" action="/projets/{{$projet->id}}/edit">
                 {{ csrf_field() }}
                 

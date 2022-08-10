@@ -30,8 +30,6 @@
 								<h4 class="header-title mt-0 mb-1">Modification d'un enseignant</h4>
 							</div>
 
-							<?php $enseignants = \App\Models\Enseignant::all(); ?>
-
 							<form method="post" action="/enseignants/{{$enseignant->id}}/edit">
 								{{ csrf_field() }}
 								

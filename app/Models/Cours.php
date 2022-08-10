@@ -10,7 +10,6 @@ class Cours extends Model
 	use HasFactory;
 
 	protected $fillable = [
-		'id_cours',
 		'matiere',
 		'date_cours',
 		'heure_debut',

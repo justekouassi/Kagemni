@@ -82,12 +82,12 @@
 								<span> Classes </span>
 							</a>
 						</li>
-						{{-- <li class="nav-item">
-							<a class="nav-link" href="/matieres">
+						<li class="nav-item">
+							<a class="nav-link" href="/cours">
 								<i class="bi bi-book"></i>
-								<span> Matières </span>
+								<span> Cours </span>
 							</a>
-						</li> --}}
+						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/encadrements">
 								<i class="bi bi-star"></i>

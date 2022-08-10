@@ -27,8 +27,6 @@
 								<h4 class="header-title mt-0 mb-1">Ajouter un etudiant</h4>
 							</div>
 
-							<?php $etudiants = \App\Models\Etudiant::all(); ?>
-
 							<form method="post" action="/etudiants/{{$etudiant->id}}/edit">
 								{{ csrf_field() }}
 								

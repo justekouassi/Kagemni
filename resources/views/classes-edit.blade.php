@@ -16,7 +16,6 @@
               <li class="breadcrumb-item active" aria-current="page"><a>Modifier</a></li>
             </ol>
           </nav>
-          <h4 class="mb-1 mt-0">Classe</h4>
         </div>
       </div>
       <div class="row">
@@ -26,8 +25,6 @@
               <div class="d-flex mb-2">
                 <h4 class="header-title mt-0 mb-1">Ajouter une classe</h4>
               </div>
-
-							<?php $classe = \App\Models\Classe::all(); ?>
 
               <form method="post" action="/classes/{{$classe->id}}/edit">
                 {{ csrf_field() }}
