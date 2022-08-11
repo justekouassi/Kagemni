@@ -7,6 +7,22 @@
 <div class="content-page">
 	<div class="content">
 		<div class="container-fluid">
+			<div class="row page-title">
+				<div class="col-md-12">
+					<nav aria-label="breadcrumb" class="float-right mt-1">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+							<li class="breadcrumb-item"><a href="/enseignants">Enseignants</a></li>
+							<li class="breadcrumb-item"><a href="/etudiants">Etudiants</a></li>
+							<li class="breadcrumb-item"><a href="/classes">Classes</a></li>
+							<li class="breadcrumb-item"><a href="/cours">Cours</a></li>
+							<li class="breadcrumb-item"><a href="/encadrements">Encadrements</a></li>
+							<li class="breadcrumb-item"><a href="/projets">Projets</a></li>
+							<li class="breadcrumb-item"><a href="/themes">Thèmes</a></li>
+						</ol>
+					</nav>
+				</div>
+			</div>
 			<div class="row page-title align-items-center">
 				<div class="col-sm-4 col-xl-6">
 					<h4 class="mb-1 mt-0">Dashboard</h4>
@@ -87,8 +103,8 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
+			<br>
 			<div class="alert alert-success alert-dismissible fade show" role="alert"> Bienvenue sur Kagemni, votre superbe plateforme de gestion !
 			</div>
 		</div>

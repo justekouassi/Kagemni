@@ -51,8 +51,9 @@
 				<div class="offcanvas-body">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					{{-- <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> --}}
-						<div style="display: column; margin-block: 40px">
-							<img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/>
+						<div style="display: column; margin-top: 40px">
+						<li class="menu-title">Administrateur</li>
+							{{-- <img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/> --}}
 							<span class="nav-link" style="margin: auto">{{ auth()->user()->email_admin }}</span>
 						</div>
 						
@@ -143,7 +144,11 @@
 	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 	<script>
 		$(document).ready(function () {
-			$('.table').DataTable();
+			$('.table').DataTable({
+				language: {
+					url: 'dataTables.french.json'
+				}
+			});
 		});
 	</script>
 
