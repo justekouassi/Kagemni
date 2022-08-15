@@ -30,7 +30,7 @@
 											<label class="form-label">Adresse email</label>
 											<div class="input-group">
 												<span class="input-group-text">
-													<i class="bi bi-envelope" data-feather="mail"></i>
+													<i class="bi bi-envelope"></i>
 												</span>
 												<input type="email" class="form-control" name="email" placeholder="adresse@email.ci" required>
 											</div>
@@ -44,9 +44,12 @@
 											<a href="/nouveau-mdp" class="float-end text-muted text-unline-dashed ms-1">Mot de passe oublié ?</a>
 											<div class="input-group">
 												<span class="input-group-text">
-													<i class="bi bi-lock" data-feather="lock"></i>
+													<i class="bi bi-lock"></i>
 												</span>
-												<input type="password" class="form-control" name="password" placeholder="motdepasse" required>
+												<input type="password" class="form-control" id="password" name="password" placeholder="motdepasse" required>
+												<span class="input-group-text" onclick="changer()">
+													<i class="bi bi-eye" id="eye"></i>
+												</span>
 											</div>
 											@if ($errors->has('password'))
 											<p style="color: red">{{ $errors->first('password') }}</p>
@@ -61,7 +64,6 @@
 								</div>
 								<div class="col-lg-6 d-none d-md-inline-block">
 									<div class="auth-page-sidebar">
-										<div class="overlay"></div>
 										<div class="auth-user-testimonial">
 											<p class="fs-24 fw-bold text-white mb-1">DFRMI</p>
 											<p class="lead">"Département de Formation et de Recherche en Mathématiques et Informatique"</p>

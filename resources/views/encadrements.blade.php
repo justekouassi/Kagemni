@@ -30,7 +30,7 @@
 								<table class="table mb-0">
 									<thead>
 										<tr>
-											<th scope="col">#</th>
+											<th scope="col">N°</th>
 											<th scope="col">Enseignants</th>
 											<th scope="col">Etudiants</th>
 											<th scope="col">Classes</th>

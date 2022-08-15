@@ -43,9 +43,12 @@
                       <label class="form-label" for="password">Mot de passe</label>
                       <div class="input-group">
                         <span class="input-group-text">
-                          <i class="bi bi-lock" data-feather="lock"></i>
+                          <i class="bi bi-lock"></i>
                         </span>
-                        <input type="password" class="form-control" name="password" placeholder="admin" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="admin" required>
+												<span class="input-group-text" onclick="changer()">
+                          <i class="bi bi-eye" id="eye"></i>
+                        </span>
                       </div>
 											@if ($errors->has('password'))
 											<p style="color: red">{{ $errors->first('password') }}</p>
@@ -55,7 +58,7 @@
 										<div class="mb-3">
                       <label class="form-label" for="avatar">Photo de profil</label>
                       <div class="input-group">
-                        <input type="file" class="form-control"  name="avatar">
+                        <input type="file" class="form-control" name="avatar">
                       </div>
                     </div>
 

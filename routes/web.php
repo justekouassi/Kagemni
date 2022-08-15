@@ -11,31 +11,34 @@ use App\Http\Controllers\ContactController;
 
 use Illuminate\Support\Facades\Route;
 
-/* Routes de connexion */
+/* connexion */
 
 Route::get('/', function () {
 	return view('index');
 })->name('login');
 Route::post('/', [ConnexionController::class, 'connexion']);
-Route::get('/signup', function () {
-	return view('signup');
-});
-Route::post('/signup', [ConnexionController::class, 'inscription']);
-Route::get('/nouveau-mdp', function () {
-	return view('nouveau-mdp');
-});
-Route::post('/nouveau-mdp', [ConnexionController::class, 'nouveauMdp']);
 
 Route::group([
 	'middleware' => 'auth',
 ], function () {
+
+	Route::get('/signup', function () {
+		return view('signup');
+	});
+	Route::post('/signup', [ConnexionController::class, 'inscription']);
+	Route::get('/nouveau-mdp', function () {
+		return view('nouveau-mdp');
+	});
+	Route::post('/nouveau-mdp', [ConnexionController::class, 'nouveauMdp']);
+
+	/* accueil et déconnexion */
 
 	Route::get('/accueil', function () {
 		return view('accueil');
 	});
 	Route::get('/logout', [ConnexionController::class, 'deconnexion']);
 
-	/* Routes enseignants */
+	/* enseignants */
 
 	Route::get('/enseignants', function () {
 		return view('enseignants');
@@ -49,7 +52,7 @@ Route::group([
 	Route::get('/enseignants/{id}/delete', [EnseignantController::class, 'supprimer']);
 
 
-	/* Routes etudiants */
+	/* etudiants */
 
 	Route::get('/etudiants', function () {
 		return view('etudiants');
@@ -63,7 +66,7 @@ Route::group([
 	Route::get('/etudiants/{id}/delete', [EtudiantController::class, 'supprimer']);
 
 
-	/* Routes classes */
+	/* classes */
 
 	Route::get('/classes', function () {
 		return view('classes');
@@ -77,7 +80,7 @@ Route::group([
 	Route::get('/classes/{id}/delete', [ClasseController::class, 'supprimer']);
 
 
-	/* Routes cours */
+	/* cours */
 
 	Route::get('/cours', function () {
 		return view('cours');
@@ -91,7 +94,7 @@ Route::group([
 	Route::get('/cours/{id}/delete', [CoursController::class, 'supprimer']);
 
 
-	/* Routes projets */
+	/* projets */
 
 	Route::get('/projets', function () {
 		return view('projets');
@@ -105,7 +108,7 @@ Route::group([
 	Route::get('/projets/{id}/delete', [ProjetController::class, 'supprimer']);
 
 
-	/* Routes themes */
+	/* themes */
 
 	Route::get('/themes', function () {
 		return view('themes');
@@ -119,7 +122,7 @@ Route::group([
 	Route::get('/themes/{id}/delete', [ThemeController::class, 'supprimer']);
 
 
-	/* Routes encadrements */
+	/* encadrements */
 
 	Route::get('/encadrements', function () {
 		return view('encadrements');

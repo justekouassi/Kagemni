@@ -29,6 +29,20 @@
 
   <!-- App js -->
   <script src="{{ asset('js/app.min.js') }}"></script>
+	<script>
+		e = true
+		function changer() {
+			if(e) {+
+				document.getElementById("password").setAttribute("type", "text")
+				document.getElementById("eye").setAttribute("class", "bi bi-eye-slash")
+				e = false
+			} else {
+				document.getElementById("password").setAttribute("type", "password")
+				document.getElementById("eye").setAttribute("class", "bi bi-eye")
+				e = true
+			}
+		}
+	</script>
 
 </body>
 

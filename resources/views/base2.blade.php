@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 	<!-- Jquery css -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}"/>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
 	<!-- Perso css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}"/>
@@ -141,19 +141,18 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Jquery js -->
-	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script>
 		$(document).ready(function () {
 			$('.table').DataTable({
 				language: {
-					url: 'dataTables.french.json'
+					url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
 				}
 			});
 		});
 	</script>
 
 	<!-- App js -->
-	<script src="{{ asset('js/app.min.js') }}"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
 	<noscript>Veuillez activer JavaScript svp !</noscript>
 
