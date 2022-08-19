@@ -23,7 +23,9 @@
 						<div class="card-body">
 							<div class="titre-ajout mb-2">
 								<h4 class="header-title mt-0 mb-1">Liste des étudiants</h4>
-								<a class="ml-auto btn btn-primary" href="/etudiants/create">Ajouter</a>
+								@if (auth()->user()->role != "Visiteur")
+									<a class="ml-auto btn btn-primary" href="/etudiants/create">Ajouter</a>
+								@endif
 							</div>
 
 							<div class="table-responsive">
@@ -54,12 +56,14 @@
 												<td>{{$etudiant->email_etudiant}}</td>
 												<td>{{$etudiant->tel_etudiant}}</td>
 												<td>
-													<a href="/etudiants/{{$etudiant->id}}/edit" class="btn btn-primary btn-sm">
-														<i class="bi bi-pencil-square"></i>
-													</a>
-													<a href="/etudiants/{{$etudiant->id}}/delete" class="btn btn-danger btn-sm suppression">
-														<i class="bi bi-trash"></i>
-													</a>
+													@if (auth()->user()->role == "Administrateur")
+														<a href="/etudiants/{{$etudiant->id}}/edit" class="btn btn-primary btn-sm">
+															<i class="bi bi-pencil-square"></i>
+														</a>
+														<a href="/etudiants/{{$etudiant->id}}/delete" class="btn btn-danger btn-sm suppression">
+															<i class="bi bi-trash"></i>
+														</a>
+													@endif
 												</td>
 											</tr>
 										@endforeach
@@ -68,11 +72,9 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 

@@ -23,7 +23,9 @@
 						<div class="card-body">
 							<div class="titre-ajout mb-2">
 								<h4 class="header-title mt-0 mb-1">Liste des cours</h4>
-								<a class="ml-auto btn btn-primary" href="/cours/create">Ajouter</a>
+								@if (auth()->user()->role != "Visiteur")
+									<a class="ml-auto btn btn-primary" href="/cours/create">Ajouter</a>
+								@endif
 							</div>
 
 							<div class="table-responsive">
@@ -61,13 +63,14 @@
 												<td>{{$cour->heure_debut}}</td>
 												<td>{{$cour->heure_fin}}</td>
 												<td>
-													<a href="/cours/{{$cour->id}}/edit"
-														class="btn btn-primary btn-sm">
-														<i class="bi bi-pencil-square"></i>
-													</a>
-													<a href="/cours/{{$cour->id}}/delete" class="btn btn-danger btn-sm suppression">
-														<i class="bi bi-trash"></i>
-													</a>
+													@if (auth()->user()->role == "Administrateur")
+														<a href="/cours/{{$cour->id}}/edit" class="btn btn-primary btn-sm">
+															<i class="bi bi-pencil-square"></i>
+														</a>
+														<a href="/cours/{{$cour->id}}/delete" class="btn btn-danger btn-sm suppression">
+															<i class="bi bi-trash"></i>
+														</a>
+													@endif
 												</td>
 											</tr>
 										@endforeach

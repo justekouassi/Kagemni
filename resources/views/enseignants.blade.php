@@ -23,7 +23,9 @@
 						<div class="card-body">
 							<div class="titre-ajout mb-2">
 								<h4 class="header-title mt-0 mb-1">Liste des enseignants </h4>
-								<a class="ml-auto btn btn-primary" href="/enseignants/create">Ajouter</a>
+								@if (auth()->user()->role != "Visiteur")
+									<a class="ml-auto btn btn-primary" href="/enseignants/create">Ajouter</a>
+								@endif
 							</div>
 
 							<div class="table-responsive">
@@ -48,21 +50,19 @@
 												<td>{{$enseignant->sexe_enseignant}}</td>
 												<td>{{$enseignant->email_enseignant}}</td>
 												<td>{{$enseignant->tel_enseignant}}</td>
-												<td>
-													<a href="/enseignants/{{$enseignant->id}}/edit"
-														class="btn btn-primary btn-sm">
-														<i class="bi bi-pencil-square"></i>
-													</a>
-													<a href="/enseignants/{{$enseignant->id}}/delete" class="btn btn-danger btn-sm suppression">
-														<i class="bi bi-trash"></i>
-													</a>
-													{{-- <a href="/enseignants/{{$enseignant->id}}/encadrements" class="btn btn-success btn-sm">
-														Encadrements
-													</a>
-													<a href="/enseignants/{{$enseignant->id}}/projets" class="btn btn-warning btn-sm">
-														Projets
-													</a> --}}
-												</td>
+												@if (auth()->user()->role == "Administrateur")
+													<td>
+														<a href="/enseignants/{{$enseignant->id}}/edit"
+															class="btn btn-primary btn-sm">
+															<i class="bi bi-pencil-square"></i>
+														</a>
+														<a href="/enseignants/{{$enseignant->id}}/delete" class="btn btn-danger btn-sm suppression">
+															<i class="bi bi-trash"></i>
+														</a>
+													</td>
+												@else
+													<td></td>
+												@endif
 											</tr>
 										@endforeach
 									</tbody>

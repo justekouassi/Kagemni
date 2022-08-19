@@ -52,7 +52,7 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					{{-- <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> --}}
 						<div style="display: column; margin-top: 40px">
-						<li class="menu-title">Administrateur</li>
+						<li class="menu-title">{{ auth()->user()->role }}</li>
 							{{-- <img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/> --}}
 							<span class="nav-link" style="margin: auto">{{ auth()->user()->email_admin }}</span>
 						</div>

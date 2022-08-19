@@ -12,6 +12,7 @@ class Administrateur extends Model implements Authenticatable {
 	protected $fillable = [
 		'email_admin',
 		'motdepasse_admin',
+		'role',
 		'avatar',
 	];
 

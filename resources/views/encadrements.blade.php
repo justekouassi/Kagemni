@@ -23,7 +23,9 @@
 						<div class="card-body">
 							<div class="titre-ajout mb-2">
 								<h4 class="header-title mt-0 mb-1">Encadrements</h4>
-								<a class="ml-auto btn btn-primary" href="/etudiants-create">Ajouter</a>
+								@if (auth()->user()->role != "Visiteur")
+									<a class="ml-auto btn btn-primary" href="/etudiants-create">Ajouter</a>
+								@endif
 							</div>
 
 							<div class="table-responsive">

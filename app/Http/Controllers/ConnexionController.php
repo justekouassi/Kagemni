@@ -16,12 +16,14 @@ class ConnexionController extends Controller
     request()->validate([
       'email' => ['required', 'email'],
       'password' => ['required'],
+      'role' => ['required'],
       'avatar' => ['image'],
     ]);
 
     $administrateur = Administrateur::create([
       "email_admin" => request("email"),
       "motdepasse_admin" => bcrypt(request("password")),
+      "role" => request("role"),
       "avatar" => request("avatar")->store('avatars', 'public'),
     ]);
 
@@ -46,10 +48,8 @@ class ConnexionController extends Controller
 
 		$id = request("id");
     $administrateur = Administrateur::where('id', $id)->first();
-    if ($result) {
-      return view('accueil', [
-				'administrateur' => $administrateur,
-			]);
+		if ($result) {
+      return redirect('/accueil');
     }
     return back()->withInput()->withErrors([
       'email' => "Vos identifiants sont incorrects.",

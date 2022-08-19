@@ -17,6 +17,7 @@ return new class extends Migration
 			$table->id();
 			$table->string('email_admin')->unique();
 			$table->string('motdepasse_admin');
+			$table->string('role');
 			$table->string('avatar')->nullable();
 			$table->timestamps();
 		});

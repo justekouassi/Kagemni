@@ -22,8 +22,10 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="mb-2 titre-ajout">
-								<h4 class="header-title mt-0 mb-1">Liste des classes </h4>
-								<a class="ml-auto btn btn-primary" href="/classes/create">Ajouter</a>
+								<h4 class="header-title mt-0 mb-1">Liste des classes</h4>
+								@if (auth()->user()->role != "Visiteur")
+									<a class="ml-auto btn btn-primary" href="/classes/create">Ajouter</a>
+								@endif
 							</div>
 
 							<div class="table-responsive">
@@ -48,12 +50,14 @@
 												<td>{{$classe->ecole}}</td>
 												<td>{{$classe->annee_scolaire}}</td>
 												<td>
-													<a href="/classes/{{$classe->id}}/edit" class="btn btn-primary btn-sm">
-														<i class="bi bi-pencil-square"></i>
-													</a>
-													<a href="/classes/{{$classe->id}}/delete" class="btn btn-danger btn-sm suppression">
-														<i class="bi bi-trash"></i>
-													</a>
+													@if (auth()->user()->role == "Administrateur")
+														<a href="/classes/{{$classe->id}}/edit" class="btn btn-primary btn-sm">
+															<i class="bi bi-pencil-square"></i>
+														</a>
+														<a href="/classes/{{$classe->id}}/delete" class="btn btn-danger btn-sm suppression">
+															<i class="bi bi-trash"></i>
+														</a>
+													@endif
 												</td>
 											</tr>
 										@endforeach
