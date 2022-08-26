@@ -140,8 +140,8 @@
 		$(document).ready(function () {
 			$('.table').DataTable({
 				language: {
+					url: "{{ asset('js/datatable-french.json') }}"
 					// url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
-					url: "datatable-french.json"
 				}
 			});
 		});
