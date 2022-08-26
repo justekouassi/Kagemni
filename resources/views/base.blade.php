@@ -6,6 +6,7 @@
   <title>@yield("title") | {{env('APP_NAME')}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="robots" content="index, follow"/>
 
   <!-- Favicon --->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon_io/apple-touch-icon.png') }}">

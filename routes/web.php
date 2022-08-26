@@ -17,14 +17,14 @@ Route::get('/', function () {
 	return view('index');
 })->name('login');
 Route::post('/', [ConnexionController::class, 'connexion']);
+Route::get('/signup', function () {
+	return view('signup');
+});
 
 Route::group([
 	'middleware' => 'auth',
 ], function () {
 
-	Route::get('/signup', function () {
-		return view('signup');
-	});
 	Route::post('/signup', [ConnexionController::class, 'inscription']);
 	Route::get('/nouveau-mdp', function () {
 		return view('nouveau-mdp');

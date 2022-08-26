@@ -10,6 +10,7 @@
 	<meta name="copyright" content="Tout droit réservé à Juste KOUASSI sur ce site web"/>
 	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants dans un département académique"/>
 	<meta name="keywords" content="kagemni, site web kagemni, site internet kagemni, plateforme web de gestion, kagemni cote d'ivoire, kagemni web, dfrmi"/>
+	<meta name="robots" content="index, follow"/>
 
 	<title>@yield('title') | {{ env('APP_NAME') }}</title>
 
@@ -49,8 +50,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 				</div>
 				<div class="offcanvas-body">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					{{-- <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> --}}
+					<ul class="navbar-nav">
 						<div style="display: column; margin-top: 40px">
 						<li class="menu-title">{{ auth()->user()->role }}</li>
 							{{-- <img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/> --}}
@@ -125,13 +125,7 @@
 
 	<!-- Footer -->
 	<footer class="footer">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-12">
-					{{ date('Y') }} &copy; Juste KOUASSI - Tous droits réservés.
-				</div>
-			</div>
-		</div>
+		{{ date('Y') }} &copy; Juste KOUASSI - Tous droits réservés.
 	</footer>
 
 	<!-- Vendor js -->

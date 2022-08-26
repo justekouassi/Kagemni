@@ -1,26 +1,22 @@
+/* Navbar */
 nav {
 	float: left;
 }
-
 .navbar {
 	flex-direction: column;
 }
-
 .navbar-expand-lg .navbar-nav {
 	flex-direction: column;
 }
-
 .navbar {
 	width: 15%;
 	height: 100vh;
 	align-items: flex-start;
 }
-
 .navbar-brand {
 	margin-left: 0.5em;
 	padding-bottom: 0;
 }
-
 .navbar .container-fluid,
 .navbar-expand-lg,
 .navbar-expand-lg .navbar-nav {
@@ -28,6 +24,7 @@ nav {
 	align-items: flex-start;
 }
 
+/* Corps principal */
 main {
 	margin-right: 50px;
 	text-align: justify;
@@ -42,6 +39,7 @@ form input {
 	margin-bottom: 0.7em;
 }
 
+/* Application des media queries */
 @media screen and (max-width: 1045px) {
 	.navbar {
 		display: none;
