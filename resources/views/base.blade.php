@@ -20,6 +20,7 @@
 
   <!-- App css -->
   <link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}"/>
+  {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}"/> --}}
 
 </head>
 

@@ -1,0 +1,34 @@
+/* Layout base */
+.my-5 {
+	margin-block: 3rem;
+}
+/* .container{} */
+.justify-content-center{
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.row{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+/* .col-xl-10{} */
+h6 {
+	margin-bottom: .5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	font-size: 1rem;
+}
+.div-input {
+	margin-bottom: 1rem
+}
+.text-center {
+	text-align: center;
+}
+/* .p-4 {
+	padding:1.5rem;
+	margin-left: 0.2rem;
+} */
