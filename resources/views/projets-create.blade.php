@@ -16,7 +16,6 @@
               <li class="breadcrumb-item active" aria-current="page"><a>Ajouter</a></li>
             </ol>
           </nav>
-          <h4 class="mb-1 mt-0">Projets</h4>
         </div>
       </div>
       <div class="row">

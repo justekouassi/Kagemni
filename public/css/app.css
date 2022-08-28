@@ -19,6 +19,9 @@ table.dataTable {
 	border-collapse: collapse !important;
 	margin-bottom: 15px !important
 }
+#DataTables_Table_0_info {
+	font-weight:600;
+}
 
 /* Corps principal */
 main {
@@ -44,6 +47,9 @@ form input {
 	color: #6c757d;
 	border-top: 1px solid #e2e7f1
 }
+.footer a {
+	text-decoration: none;
+}
 
 /* Application des media queries */
 
@@ -66,6 +72,9 @@ form input {
 }
 
 @media screen and (max-width: 1045px) {
+	.modal-backdrop {
+		--bs-backdrop-zindex: 0;
+	}
 	main {
 		margin-right: 5px;
 		padding-top: 50px;

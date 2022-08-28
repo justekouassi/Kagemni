@@ -124,7 +124,7 @@
 
 	<!-- Footer -->
 	<footer class="footer">
-		{{ date('Y') }} &copy; Juste KOUASSI - Tous droits réservés.
+		{{ date('Y') }} &copy; <a href="https://www.justekouassi.ovh">Juste KOUASSI</a> - Tous droits réservés.
 	</footer>
 
 	<!-- Vendor js -->
