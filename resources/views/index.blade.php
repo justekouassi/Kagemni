@@ -40,14 +40,14 @@
 
 								<div class="div-input mb-3">
 									<label class="form-label">Mot de passe</label>
-									<a href="/nouveau-mdp" class="float-end text-muted text-unline-dashed ms-1">Mot de passe oublié ?</a>
+									<a href="/nouveau-mdp" class="float-end text-muted ms-1">Mot de passe oublié ?</a>
 									<div class="input-group">
 										<span class="input-group-text">
 											<i class="bi bi-lock"></i>
 										</span>
 										<input type="password" class="form-control" id="password" name="password" placeholder="motdepasse" required>
 										<span class="input-group-text" onclick="changer()">
-											<i class="bi bi-eye" id="eye"></i>
+											<i class="bi bi-eye-slash" id="eye"></i>
 										</span>
 									</div>
 									@if ($errors->has('password'))
@@ -56,10 +56,10 @@
 								</div>
 
 								<div class="div-input mb-3 d-grid">
-									<input class="btn btn-primary text-center" name="validate" type="submit" value="SE CONNECTER">
+									<input class="btn btn-primary" name="validate" type="submit" value="SE CONNECTER">
 								</div>
 
-								<a href="/signup" class="float-end text-unline-dashed ms-1">Pas encore inscrit ?</a>
+								<a href="/signup" class="float-end ms-1">Pas encore inscrit ?</a>
 							</form>
 							
 						</div>
@@ -67,7 +67,7 @@
 							<div class="auth-page-sidebar">
 								<div class="overlay"></div>
 								<div class="auth-user-testimonial">
-									<p class="fs-24 fw-bold text-white mb-1">DFRMI</p>
+									<p class="fs-24 fw-bold mb-1">DFRMI</p>
 									<p class="lead">"Département de Formation et de Recherche en Mathématiques et Informatique"</p>
 									<p>KAGEMNI</p>
 								</div>

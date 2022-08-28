@@ -4,7 +4,7 @@
 
 @section('content')
 
-<body class="authentication-bg">
+<body>
 
 <div class="container my-5">
 	<div class="row justify-content-center">
@@ -46,7 +46,7 @@
 										</span>
 										<input type="password" class="form-control" id="password" name="password" placeholder="admin" required>
 										<span class="input-group-text" onclick="changer()">
-											<i class="bi bi-eye" id="eye"></i>
+											<i class="bi bi-eye-slash" id="eye"></i>
 										</span>
 									</div>
 									@if ($errors->has('password'))

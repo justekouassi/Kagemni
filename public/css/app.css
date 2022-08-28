@@ -1,27 +1,23 @@
-/* Navbar */
-nav {
-	float: left;
+html {
+	position: relative;
+	min-height: 100%
 }
-.navbar {
-	flex-direction: column;
+
+.content-page {
+	margin-top: 20px;
+	margin-left: 17%;
+	padding: 0 15px 65px 15px;
+	min-height: 80vh;
 }
-.navbar-expand-lg .navbar-nav {
-	flex-direction: column;
+
+.avatar-sm {
+	height: 2.25rem;
+	width: 2.25rem
 }
-.navbar {
-	width: 15%;
-	height: 100vh;
-	align-items: flex-start;
-}
-.navbar-brand {
-	margin-left: 0.5em;
-	padding-bottom: 0;
-}
-.navbar .container-fluid,
-.navbar-expand-lg,
-.navbar-expand-lg .navbar-nav {
-	flex-direction: column;
-	align-items: flex-start;
+
+table.dataTable {
+	border-collapse: collapse !important;
+	margin-bottom: 15px !important
 }
 
 /* Corps principal */
@@ -35,22 +31,51 @@ main {
 	display: flex;
 	justify-content: space-between;
 }
+
 form input {
 	margin-bottom: 0.7em;
 }
 
+.footer {
+	padding: 19px 15px 20px;
+	position: absolute;
+	right: 0;
+	left: 250px;
+	color: #6c757d;
+	border-top: 1px solid #e2e7f1
+}
+
 /* Application des media queries */
-@media screen and (max-width: 1045px) {
-	.navbar {
-		display: none;
+
+@media screen and (min-width: 1046px) {
+	nav {
+		float: left;
 	}
-	main {
-		margin-right: 5px;
-		text-align: justify;
+
+	.navbar {
+		width: 15%;
+		height: 100vh;
+	}
+
+	.navbar,
+	.navbar .container-fluid,
+	.navbar-expand-lg .navbar-nav {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }
-@media screen and (max-width: 500px) {
-	.navbar-brand {
-		display: none;
+
+@media screen and (max-width: 1045px) {
+	main {
+		margin-right: 5px;
+		padding-top: 50px;
+		/* text-align: justify; */
+	}
+	.content-page {
+		margin-left: 3%;
+	}
+	.footer {
+		left: 0;
+		text-align: center
 	}
 }

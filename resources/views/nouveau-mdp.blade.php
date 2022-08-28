@@ -46,6 +46,9 @@
 												<i class="bi bi-lock" data-feather="lock"></i>
 											</span>
 											<input type="password" class="form-control" name="password" placeholder="admin" required>
+											<span class="input-group-text" onclick="changer()">
+												<i class="bi bi-eye-slash" id="eye"></i>
+											</span>
 										</div>
 										@if ($errors->has('password'))
 										<p style="color: red">{{ $errors->first('password') }}</p>
@@ -59,6 +62,9 @@
 												<i class="bi bi-lock" data-feather="lock"></i>
 											</span>
 											<input type="password" class="form-control" name="password_confirmation" placeholder="admin" required>
+											<span class="input-group-text" onclick="changer()">
+												<i class="bi bi-eye-slash" id="eye"></i>
+											</span>
 										</div>
 										@if ($errors->has('password'))
 										<p style="color: red">{{ $errors->first('password') }}</p>

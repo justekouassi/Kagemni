@@ -1,34 +1,53 @@
-/* Layout base */
 .my-5 {
 	margin-block: 3rem;
 }
-/* .container{} */
-.justify-content-center{
-	-ms-flex-pack: center;
-	justify-content: center;
-}
-.row{
-	display: -ms-flexbox;
+
+.row {
 	display: flex;
-	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin-right: -15px;
 	margin-left: -15px;
 }
-/* .col-xl-10{} */
+
+.justify-content-center {
+	justify-content: center;
+}
+
 h6 {
 	margin-bottom: .5rem;
 	font-weight: 500;
 	line-height: 1.2;
 	font-size: 1rem;
 }
+
 .div-input {
-	margin-bottom: 1rem
+	margin-bottom: 1rem;
 }
+
 .text-center {
 	text-align: center;
 }
-/* .p-4 {
-	padding:1.5rem;
-	margin-left: 0.2rem;
-} */
+
+.auth-page-sidebar {
+	padding: 0;
+	background-image: url(../images/auth-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	position: relative;
+}
+
+.overlay {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.auth-user-testimonial {
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	margin: 0 auto;
+	padding: 0 1.75rem;
+	bottom: 3rem;
+}

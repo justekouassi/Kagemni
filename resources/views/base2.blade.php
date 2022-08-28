@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+	<!-- Balises meta -->
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
 	<meta name="author" content="Juste KOUASSI"/>
 	<meta name="copyright" content="Tout droit réservé à Juste KOUASSI sur ce site web"/>
 	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants dans un département académique"/>
-	<meta name="keywords" content="kagemni, site web kagemni, site internet kagemni, plateforme web de gestion, kagemni cote d'ivoire, kagemni web, dfrmi"/>
+	<meta name="keywords" content="kagemni, site web kagemni, site internet kagemni, plateforme web de gestion, kagemni cote d'ivoire, kagemni web, dfrmi, kagemni inphb, justekouassi, juste kouassi"/>
 	<meta name="robots" content="index, follow"/>
 
 	<title>@yield('title') | {{ env('APP_NAME') }}</title>
@@ -21,16 +22,14 @@
 	<link rel="manifest" href="{{ asset('images/favicon_io/site.webmanifest') }}">
 
 	<!-- Bootstrap css -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 	<!-- Jquery css -->
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
 	<!-- Perso css -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
-
 </head>
 
 <body>
@@ -50,7 +49,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 				</div>
 				<div class="offcanvas-body">
-					<ul class="navbar-nav">
+					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 						<div style="display: column; margin-top: 40px">
 						<li class="menu-title">{{ auth()->user()->role }}</li>
 							{{-- <img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/> --}}
@@ -58,7 +57,7 @@
 						</div>
 						
 						<li class="menu-title">Navigation</li>
-						<li>
+						<li class="nav-item">
 							<a class="nav-link" href="/accueil">
 								<i class="bi bi-house-door"></i>
 								<span> Accueil </span>
@@ -141,7 +140,6 @@
 			$('.table').DataTable({
 				language: {
 					url: "{{ asset('js/datatable-french.json') }}"
-					// url: "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
 				}
 			});
 		});
@@ -152,5 +150,4 @@
 	<noscript>Veuillez activer JavaScript svp !</noscript>
 
 </body>
-
 </html>

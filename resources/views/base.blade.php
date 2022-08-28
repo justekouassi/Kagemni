@@ -2,45 +2,48 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <meta charset="utf-8"/>
-  <title>@yield("title") | {{env('APP_NAME')}}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8"/>
+	<title>@yield("title") | {{env('APP_NAME')}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="theme-color" content="#fff"/>
+	<meta name="author" content="Juste KOUASSI"/>
+	<meta name="copyright" content="Tout droit réservé à Juste KOUASSI sur ce site web"/>
+	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants dans un département académique"/>
+	<meta name="keywords" content="kagemni, site web kagemni, site internet kagemni, plateforme web de gestion, kagemni cote d'ivoire, kagemni web, dfrmi, kagemni inphb, justekouassi, juste kouassi"/>
 	<meta name="robots" content="index, follow"/>
 
-  <!-- Favicon --->
+	<!-- Favicon --->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon_io/apple-touch-icon.png') }}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon_io/favicon-32x32.png') }}">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon_io/favicon-16x16.png') }}">
 	<link rel="manifest" href="{{ asset('images/favicon_io/site.webmanifest') }}">
 
-  <!-- Bootstrap css -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-  <!-- App css -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.min.css') }}"/>
-  {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}"/> --}}
-
+	<!-- App css -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}"/>
 </head>
 
 @yield("content")
 
-  <!-- Vendor js -->
-  <script src="{{ asset('js/vendor.min.js') }}"></script>
+	<!-- Vendor js -->
+	<script src="{{ asset('js/vendor.min.js') }}"></script>
 
-  <!-- App js -->
-  <script src="{{ asset('js/app.min.js') }}"></script>
+	<!-- App js -->
+	<script src="{{ asset('js/app.min.js') }}"></script>
 	<script>
 		e = true
 		function changer() {
 			if(e) {+
 				document.getElementById("password").setAttribute("type", "text")
-				document.getElementById("eye").setAttribute("class", "bi bi-eye-slash")
+				document.getElementById("eye").setAttribute("class", "bi bi-eye")
 				e = false
 			} else {
 				document.getElementById("password").setAttribute("type", "password")
-				document.getElementById("eye").setAttribute("class", "bi bi-eye")
+				document.getElementById("eye").setAttribute("class", "bi bi-eye-slash")
 				e = true
 			}
 		}
