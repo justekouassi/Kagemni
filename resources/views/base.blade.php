@@ -3,15 +3,22 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>@yield("title") | {{env('APP_NAME')}}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="theme-color" content="#fff"/>
-	<meta name="author" content="Juste KOUASSI"/>
-	<meta name="copyright" content="Tout droit réservé à Juste KOUASSI sur ce site web"/>
-	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants dans un département académique"/>
-	<meta name="keywords" content="kagemni, site web kagemni, site internet kagemni, plateforme web de gestion, kagemni cote d'ivoire, kagemni web, dfrmi, kagemni inphb, justekouassi, juste kouassi"/>
+	<meta name="title" content="Kagemni | plateforme web de gestion"/>
+	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants du Département de Formation et de Recherche Mathématiques Informatique (DFRMI) de l'Institut National Polytechnique Félix Houphouët-Boigny"/>
 	<meta name="robots" content="index, follow"/>
+
+	<link rel="canonical" href="https://kagemni.herokuapp.com">
+
+	<meta property="og:title" content="Kagemni | Plateforme web de gestion"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="https://kagemni.herokuapp.com/favicon.ico"/>
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content="400"/>
+	<meta property="og:image:height" content="400"/>
+	<meta property="og:url" content="https://kagemni.herokuapp.com"/>
+	<meta property="og:description" content="Kagemni, plateforme web de gestion des activités des enseignants du DFRMI."/>
 
 	<!-- Favicon --->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon_io/apple-touch-icon.png') }}">
@@ -25,19 +32,16 @@
 
 	<!-- App css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}"/>
+	
+	<title>@yield("title") | {{env('APP_NAME')}}</title>
 </head>
 
 @yield("content")
 
-	<!-- Vendor js -->
-	<script src="{{ asset('js/vendor.min.js') }}"></script>
-
-	<!-- App js -->
-	<script src="{{ asset('js/app.min.js') }}"></script>
 	<script>
 		e = true
 		function changer() {
-			if(e) {+
+			if(e) {
 				document.getElementById("password").setAttribute("type", "text")
 				document.getElementById("eye").setAttribute("class", "bi bi-eye")
 				e = false
@@ -50,5 +54,4 @@
 	</script>
 
 </body>
-
 </html>

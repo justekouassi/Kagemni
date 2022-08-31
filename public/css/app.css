@@ -2,19 +2,16 @@ html {
 	position: relative;
 	min-height: 100%
 }
-
 .content-page {
 	margin-top: 20px;
 	margin-left: 17%;
 	padding: 0 15px 65px 15px;
 	min-height: 80vh;
 }
-
 .avatar-sm {
 	height: 2.25rem;
 	width: 2.25rem
 }
-
 table.dataTable {
 	border-collapse: collapse !important;
 	margin-bottom: 15px !important
@@ -22,23 +19,19 @@ table.dataTable {
 #DataTables_Table_0_info {
 	font-weight:600;
 }
-
 /* Corps principal */
 main {
 	margin-right: 50px;
 	text-align: justify;
 }
-
 /* Eléments divers */
 .titre-ajout {
 	display: flex;
 	justify-content: space-between;
 }
-
 form input {
 	margin-bottom: 0.7em;
 }
-
 .footer {
 	padding: 19px 15px 20px;
 	position: absolute;
@@ -50,19 +43,15 @@ form input {
 .footer a {
 	text-decoration: none;
 }
-
 /* Application des media queries */
-
 @media screen and (min-width: 1046px) {
 	nav {
 		float: left;
 	}
-
 	.navbar {
 		width: 15%;
 		height: 100vh;
 	}
-
 	.navbar,
 	.navbar .container-fluid,
 	.navbar-expand-lg .navbar-nav {
@@ -70,7 +59,6 @@ form input {
 		align-items: flex-start;
 	}
 }
-
 @media screen and (max-width: 1045px) {
 	.modal-backdrop {
 		--bs-backdrop-zindex: 0;
@@ -78,7 +66,6 @@ form input {
 	main {
 		margin-right: 5px;
 		padding-top: 50px;
-		/* text-align: justify; */
 	}
 	.content-page {
 		margin-left: 3%;

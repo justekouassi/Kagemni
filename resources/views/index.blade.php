@@ -24,7 +24,7 @@
 							<p class="text-muted mt-1 mb-4">Entrez votre adresse mail et votre de passe pour accéder au tableau de bord.</p>
 
 							<form method="POST" action="/">
-								{{ csrf_field() }}
+								@csrf
 								<div class="div-input mb-3">
 									<label class="form-label">Adresse email</label>
 									<div class="input-group">

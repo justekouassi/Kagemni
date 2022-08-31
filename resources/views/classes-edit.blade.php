@@ -27,7 +27,7 @@
               </div>
 
               <form method="post" action="/classes/{{$classe->id}}/edit">
-                {{ csrf_field() }}
+                @csrf
                 
                 <div class="row">
                   <div class="col">

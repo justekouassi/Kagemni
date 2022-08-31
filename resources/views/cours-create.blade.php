@@ -26,7 +26,7 @@
 								<h4 class="header-title mt-0 mb-1">Ajouter un cours</h4>
 							</div>
 							<form method="post" action="/cours/create">
-								{{ csrf_field() }}
+								@csrf
 								
 								<div class="row">
 									<div class="col">

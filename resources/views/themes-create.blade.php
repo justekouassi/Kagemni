@@ -27,7 +27,7 @@
               </div>
 
               <form method="post" action="/themes/create">
-                {{ csrf_field() }}
+                @csrf
                 
                 <div class="row">
                   <div class="col">

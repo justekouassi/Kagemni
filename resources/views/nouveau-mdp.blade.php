@@ -25,7 +25,7 @@
 								<p class="text-muted mt-1 mb-4">Inscrivez votre nouveau mot de passe</p>
 
 								<form method="POST" action="/nouveau-mdp">
-									{{ csrf_field() }}
+									@csrf
 									<div class="mb-3">
 										<label class="form-label" for="email">Adresse email</label>
 										<div class="input-group">

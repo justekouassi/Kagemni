@@ -2,18 +2,23 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-	<!-- Balises meta -->
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#fff"/>
-	<meta name="author" content="Juste KOUASSI"/>
-	<meta name="copyright" content="Tout droit réservé à Juste KOUASSI sur ce site web"/>
-	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants dans un département académique"/>
-	<meta name="keywords" content="kagemni, site web kagemni, site internet kagemni, plateforme web de gestion, kagemni cote d'ivoire, kagemni web, dfrmi, kagemni inphb, justekouassi, juste kouassi"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="title" content="Kagemni | plateforme web de gestion"/>
+	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants du Département de Formation et de Recherche Mathématiques Informatique (DFRMI) de l'Institut National Polytechnique Félix Houphouët-Boigny"/>
 	<meta name="robots" content="index, follow"/>
 
-	<title>@yield('title') | {{ env('APP_NAME') }}</title>
+	<link rel="canonical" href="https://kagemni.herokuapp.com">
+
+	<meta property="og:title" content="Kagemni | Plateforme web de gestion"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="https://kagemni.herokuapp.com/favicon.ico"/>
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content="400"/>
+	<meta property="og:image:height" content="400"/>
+	<meta property="og:url" content="https://kagemni.herokuapp.com"/>
+	<meta property="og:description" content="Kagemni, plateforme web de gestion des activités des enseignants du DFRMI."/>
 
 	<!-- Favicon --->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon_io/apple-touch-icon.png') }}">
@@ -22,7 +27,7 @@
 	<link rel="manifest" href="{{ asset('images/favicon_io/site.webmanifest') }}">
 
 	<!-- Bootstrap css -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 	<!-- Jquery css -->
@@ -30,6 +35,8 @@
 
 	<!-- Perso css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
+
+	<title>@yield('title') | {{ env('APP_NAME') }}</title>
 </head>
 
 <body>
@@ -60,44 +67,44 @@
 						<li class="nav-item">
 							<a class="nav-link" href="/accueil">
 								<i class="bi bi-house-door"></i>
-								<span> Accueil </span>
+								<span>Accueil</span>
 							</a>
 						</li>
 						<li class="menu-title">Menu</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/enseignants">
 								<i class="bi bi-person"></i>
-								<span> Enseignants </span>
+								<span>Enseignants</span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/etudiants">
 								<i class="bi bi-people"></i>
-								<span> Etudiants </span>
+								<span>Etudiants</span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/classes">
 								<i class="bi bi-calendar4-week"></i>
-								<span> Classes </span>
+								<span>Classes</span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/cours">
 								<i class="bi bi-book"></i>
-								<span> Cours </span>
+								<span>Cours</span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/encadrements">
 								<i class="bi bi-star"></i>
-								<span> Encadrements </span>
+								<span>Encadrements</span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/projets">
 								<i class="bi bi-pencil-square"></i>
-								<span> Projets enseignants </span>
+								<span>Projets enseignants</span>
 							</a>
 						</li>
 						<li class="nav-item">
@@ -124,7 +131,7 @@
 
 	<!-- Footer -->
 	<footer class="footer">
-		{{ date('Y') }} &copy; <a href="https://www.justekouassi.ovh">Juste KOUASSI</a> - Tous droits réservés.
+		{{ date('Y') }} &copy; <a href="https://justekouassi.ovh">Juste KOUASSI</a> - Tous droits réservés.
 	</footer>
 
 	<!-- Vendor js -->

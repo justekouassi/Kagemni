@@ -29,7 +29,7 @@
 							<?php $themes = \App\Models\Theme::all(); ?>
 
               <form method="post" action="/themes/{{$theme->id}}/edit">
-                {{ csrf_field() }}
+                @csrf
                 
                 <div class="row">
                   <div class="col">

@@ -24,7 +24,7 @@
 							<p class="text-muted mt-1 mb-4">Tout d'abord, enregistrez-vous avant de continuer l'aventure !</p>
 
 							<form method="POST" action="/signup" enctype="multipart/form-data">
-								{{ csrf_field() }}
+								@csrf
 								<div class="mb-3">
 									<label class="form-label" for="email">Adresse email</label>
 									<div class="input-group">

@@ -29,7 +29,7 @@
 							<?php $projets = \App\Models\Projet::all(); ?>
 
               <form method="post" action="/projets/create">
-                {{ csrf_field() }}
+                @csrf
                 
                 <div class="row">
                   <div class="col">
