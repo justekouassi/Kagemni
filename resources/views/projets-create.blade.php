@@ -7,7 +7,7 @@
 <div class="content-page">
   <div class="content">
     <div class="container-fluid">
-      <div class="row page-title">
+      <div class="row">
         <div class="col-md-12">
           <nav aria-label="breadcrumb" class="float-right mt-1">
             <ol class="breadcrumb">

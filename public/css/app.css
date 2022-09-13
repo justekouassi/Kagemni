@@ -2,6 +2,7 @@ html {
 	position: relative;
 	min-height: 100%
 }
+.breadcrumb-item+.breadcrumb-item::before{content:">"}
 .content-page {
 	margin-top: 20px;
 	margin-left: 17%;
