@@ -128,3 +128,7 @@ Route::group([
 		return view('encadrements');
 	});
 });
+
+Route::get('/dynamic_dependent', '\App\Http\Controllers\DynamicDependent@index');
+
+Route::post('dynamic_dependent/fetch', '\App\Http\Controllers\DynamicDependent@fetch')->name('dynamicdependent.fetch');
