@@ -33,26 +33,24 @@
 										<div class="form-group row">
 											<label class="col-lg-2 col-form-label" for="ecole">Ecole</label>
 											<div class="col-lg-10" style="margin-bottom: 11px">
-												<select required name="ecole" class="form-select" id="ecole">
-													<option value="" selected disabled>* Choisir une école *</option>
-													<option value="CPGE">CPGE</option>
-													<option value="ESA">ESA</option>
-													<option value="ESCAE">ESCAE</option>
-													<option value="ESI">ESI</option>
-													<option value="ESTP">ESTP</option>
-													<option value="ESMG">ESMG</option>
-													<option value="ESPE">ESPE</option>
-													<option value="IDSI">IDSI</option>
-													<option value="VALOPRO">VALOPRO</option>
+												<select name="ecole" class="form-select dynamic" id="ecole" data-dependent="filiere" required>
+													<option value="" selected disabled>Choisir Ecole</option>
+													@foreach($ecoles_list as $ecole)
+														<option value="{{ $ecole->ecole}}">{{ $ecole->ecole }}</option>
+													@endforeach
 												</select>
 											</div>
 											<label class="col-lg-2 col-form-label" for="filiere">Filière</label>
-											<div class="col-lg-10">
-												<input required type="text" class="form-control" id="filiere" name="filiere">
+											<div class="col-lg-10" style="margin-bottom: 11px">
+												<select name="filiere" id="filiere" class="form-select dynamic" data-dependent="libelle_classe">
+													<option value="" selected disabled>Choisir Filiere</option>
+												</select>
 											</div>
-											<label class="col-lg-2 col-form-label" for="classe">Classe</label>
-											<div class="col-lg-10">
-												<input required type="text" class="form-control" id="classe" name="classe">
+											<label class="col-lg-2 col-form-label" for="libelle_classe">Classe</label>
+											<div class="col-lg-10" style="margin-bottom: 11px">
+												<select name="classe" id="libelle_classe" class="form-select">
+													<option value="" selected disabled>Choisir Classe</option>
+												</select>
 											</div>
 											<label class="col-lg-2 col-form-label" for="annee">Année scolaire</label>
 											<div class="col-lg-10">
@@ -70,3 +68,38 @@
 		</div>
 	</div>
 @endsection
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function () {
+
+		$('.dynamic').change(function () {
+			if ($(this).val() != '') {
+				var select = $(this).attr("id");
+				var value = $(this).val();
+				var dependent = $(this).data('dependent');
+				var _token = $('input[name="_token"]').val();
+				$.ajax({
+					url: "{{ route('classes-create.fetch') }}",
+					method: "POST",
+					data: { select: select, value: value, _token: _token, dependent: dependent },
+					success: function (result) {
+						$('#' + dependent).html(result);
+					}
+
+				})
+			}
+		});
+
+		$('#ecole').change(function () {
+			$('#filiere').val('');
+			$('#classe').val('');
+		});
+
+		$('#filiere').change(function () {
+			$('#classe').val('');
+		});
+
+	});
+</script>

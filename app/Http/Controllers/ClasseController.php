@@ -2,10 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Classe;
 
 class ClasseController extends Controller
 {
+	function index()
+	{
+		$ecoles_list = DB::table('classes')
+			->groupBy('ecole')
+			->get();
+		return view('classes-create')->with('ecoles_list', $ecoles_list);
+	}
+
+	function fetch(Request $request)
+	{
+		$select = $request->get('select');
+		$value = $request->get('value');
+		$dependent = $request->get('dependent');
+		$data = DB::table('classes')
+			->where($select, $value)
+			->groupBy($dependent)
+			->get();
+		$output = '<option value="">Choisir ' . ucfirst($dependent) . '</option>';
+		foreach ($data as $row) {
+			$output .= '<option value="' . $row->$dependent . '">' . $row->$dependent . '</option>';
+		}
+		echo $output;
+	}
+
 	public function ajouter()
 	{
 		request()->validate([

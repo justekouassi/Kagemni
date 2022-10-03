@@ -7,7 +7,6 @@ use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\CoursController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\ThemeController;
-use App\Http\Controllers\ContactController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -71,9 +70,10 @@ Route::group([
 	Route::get('/classes', function () {
 		return view('classes');
 	});
-	Route::get('/classes/create', function () {
-		return view('classes-create');
-	});
+
+	Route::get('/classes/create', [ClasseController::class, 'index']);
+	Route::post('classes/create/fetch', [ClasseController::class, 'fetch'])->name('classes-create.fetch');
+
 	Route::post('/classes/create', [ClasseController::class, 'ajouter']);
 	Route::get('/classes/{id}/edit', [ClasseController::class, 'consulter']);
 	Route::post('/classes/{id}/edit', [ClasseController::class, 'modifier']);
@@ -128,7 +128,3 @@ Route::group([
 		return view('encadrements');
 	});
 });
-
-Route::get('/dynamic_dependent', '\App\Http\Controllers\DynamicDependent@index');
-
-Route::post('dynamic_dependent/fetch', '\App\Http\Controllers\DynamicDependent@fetch')->name('dynamicdependent.fetch');
