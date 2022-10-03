@@ -128,6 +128,3 @@ Route::group([
 		return view('encadrements');
 	});
 });
-
-// Route::get('contact-form', [ContactController::class, 'create']);
-// Route::post('contact-form', [ContactController::class, 'store']);
