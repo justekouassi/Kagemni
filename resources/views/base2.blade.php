@@ -34,7 +34,7 @@
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
 	<!-- Perso css -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
 
 	<title>@yield('title') | {{ env('APP_NAME') }}</title>
 </head>
@@ -59,8 +59,8 @@
 						<li class="menu-title">
 							{{ auth()->user()->role ?? "Bienvenue cher visiteur" }}
 						</li>
-							{{-- <img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/> --}}
-							<span style="margin: auto">
+							<img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar"/>
+							<span class="email-admin">
 								{{ auth()->user()->email_admin ?? "" }}
 							</span>
 					</div>
@@ -113,8 +113,8 @@
 						</a>
 					</li>
 					@if (auth()->check() && auth()->user()->role == "Administrateur")
-						<li class="nav-item">
-							<a class="nav-link btn btn-warning" href="/logout">
+						<li class="nav-item logout">
+							<a class="nav-link" href="/logout">
 								<i class="bi bi-escape"></i>
 								<span>Déconnexion</span>
 							</a>
