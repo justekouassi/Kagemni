@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\EnseignantController;
@@ -13,15 +14,13 @@ use Illuminate\Support\Facades\Route;
 /* connexion */
 
 Route::get('/login', function () {
-	return view('index');
+	return view('login');
 })->name('login');
 Route::post('/login', [ConnexionController::class, 'connexion']);
 
 /* accueil */
 
-Route::get('/', function () {
-	return view('accueil');
-});
+Route::get('/', [AccueilController::class, 'index']);
 
 Route::group([
 	'middleware' => 'auth',

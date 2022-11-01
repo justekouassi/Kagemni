@@ -10,7 +10,7 @@ class ConnexionController extends Controller
 {
 	/**
 	 * assure l'inscription d'un administrateur
-	 * @return index la page de connexion
+	 * @return login la page de connexion
 	 */
 	public function inscription() {
     request()->validate([
@@ -58,7 +58,7 @@ class ConnexionController extends Controller
 
 	/**
 	 * assure la déconnexion d'un administrateur
-	 * @return index la page de connexion
+	 * @return login la page de connexion
 	 */
 	public function deconnexion()
   {
@@ -68,7 +68,7 @@ class ConnexionController extends Controller
 
 	/**
 	 * permet de modifier le mot de passe d'un administrateur
-	 * @return index la page de connexion
+	 * @return login la page de connexion
 	 */
 	public function nouveauMdp()
 	{

@@ -64,7 +64,7 @@
 								{{ auth()->user()->email_admin ?? "" }}
 							</span>
 					</div>
-					<li class="nav-item {{request()->is('accueil') ? 'active' : ''}}">
+					<li class="nav-item {{request()->is('/') ? 'active' : ''}}">
 						<a class="nav-link" href="/">
 							<i class="bi bi-house-door"></i>
 							<span>Accueil</span>
