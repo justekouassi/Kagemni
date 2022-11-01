@@ -4,8 +4,7 @@
 
 @section('content')
 
-<div class="content-page">
-	<div class="content">
+
 		<div class="container-fluid">
 			<br>
 			<div class="alert alert-success show"> Bienvenue sur Kagemni, votre superbe plateforme de gestion !

@@ -40,99 +40,93 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-light fixed-top">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="/accueil" style="margin: auto">
-				<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30"/>
-				&nbsp;KAGEMNI
-			</a>
-			<br>
-			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#my-navbar" aria-controls="my-navbar">
-				<i class="bi bi-list"></i>
-			</button>
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="my-navbar" aria-labelledby="offcanvasNavbarLabel">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Juste KOUASSI</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-						<div style="display: column; margin-top: 40px">
+	{{-- <a class="navbar-brand" href="/accueil" style="margin: auto">
+		<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30"/>
+		&nbsp;KAGEMNI
+	</a> --}}
+
+	<div class="d-flex align-items-stretch">
+		<nav id="sidebar" class="active">
+			<div class="custom-menu">
+				<button type="button" id="sidebarCollapse" class="btn btn-primary">
+					<i class="bi bi-list"></i>
+				</button>
+			</div>
+			<div class="p-4">
+				<h1><a href="/accueil" class="logo">Kagemni</a></h1>
+				<ul class="list-unstyled components mb-5">
+					<div style="display: column; margin-top: 40px">
 						<li class="menu-title">{{ auth()->user()->role }}</li>
 							{{-- <img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/> --}}
-							<span class="nav-link" style="margin: auto">{{ auth()->user()->email_admin }}</span>
-						</div>
-						
-						<li class="menu-title">Navigation</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/accueil">
-								<i class="bi bi-house-door"></i>
-								<span>Accueil</span>
-							</a>
-						</li>
-						<li class="menu-title">Menu</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/enseignants">
-								<i class="bi bi-person"></i>
-								<span>Enseignants</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/etudiants">
-								<i class="bi bi-people"></i>
-								<span>Etudiants</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/classes">
-								<i class="bi bi-calendar4-week"></i>
-								<span>Classes</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/cours">
-								<i class="bi bi-book"></i>
-								<span>Cours</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/encadrements">
-								<i class="bi bi-star"></i>
-								<span>Encadrements</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/projets">
-								<i class="bi bi-pencil-square"></i>
-								<span>Projets enseignants</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/themes">
-								<i class="bi bi-folder2-open"></i>
-								<span>Thèmes étudiants</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link btn btn-warning" href="/logout">
-								<i class="bi bi-escape"></i>
-								<span>Déconnexion</span>
-							</a>
-						</li>
-					</ul>
-				</div>
+							<span style="margin: auto">{{ auth()->user()->email_admin }}</span>
+					</div>
+					<li class="nav-item active">
+						<a class="nav-link" href="/accueil">
+							<i class="bi bi-house-door"></i>
+							<span>Accueil</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/enseignants">
+							<i class="bi bi-person"></i>
+							<span>Enseignants</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/etudiants">
+							<i class="bi bi-people"></i>
+							<span>Etudiants</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/classes">
+							<i class="bi bi-calendar4-week"></i>
+							<span>Classes</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/cours">
+							<i class="bi bi-book"></i>
+							<span>Cours</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/encadrements">
+							<i class="bi bi-star"></i>
+							<span>Encadrements</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/projets">
+							<i class="bi bi-pencil-square"></i>
+							<span>Projets enseignants</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/themes">
+							<i class="bi bi-folder2-open"></i>
+							<span>Thèmes étudiants</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link btn btn-warning" href="/logout">
+							<i class="bi bi-escape"></i>
+							<span>Déconnexion</span>
+						</a>
+					</li>
+				</ul>
+
+				<footer class="footer">
+					{{ date('Y') }} &copy; <a href="https://justekouassi.ovh">Juste KOUASSI</a> - Tous droits réservés.
+				</footer>
 			</div>
+		</nav>
+
+		<!-- Page Content  -->
+		<div id="content" class="p-4 p-md-5 pt-5">
+			@yield('content')
 		</div>
-	</nav>
-
-	<main>
-		@yield('content')
-	</main>
-
-	<!-- Footer -->
-	<footer class="footer">
-		{{ date('Y') }} &copy; <a href="https://justekouassi.ovh">Juste KOUASSI</a> - Tous droits réservés.
-	</footer>
+	</div>
 
 	<!-- Vendor js -->
 	<script src="{{ asset('js/vendor.min.js') }}"></script>
@@ -154,6 +148,7 @@
 
 	<!-- App js -->
 	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
 	<noscript>Veuillez activer JavaScript svp !</noscript>
 
 </body>

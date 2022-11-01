@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="content-page">
+<div class="">
   <div class="content">
     <div class="container-fluid">
       <div class="row">
