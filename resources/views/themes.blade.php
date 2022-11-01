@@ -9,7 +9,7 @@
 		<div class="col-md-12">
 			<nav aria-label="breadcrumb" class="float-right mt-1">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+					<li class="breadcrumb-item"><a href="/">Accueil</a></li>
 					<li class="breadcrumb-item active" aria-current="page"><a>Thèmes</a></li>
 				</ol>
 			</nav>
@@ -21,7 +21,7 @@
 				<div class="card-body">
 					<div class="titre-ajout">
 						<h4 class="header-title mt-0 mb-1">Liste des thèmes</h4>
-						@if (auth()->user()->role != "Visiteur")
+						@if (auth()->check() && auth()->user()->role == "Administrateur")
 							<a class="ml-auto btn btn-primary" href="/themes/create">Ajouter</a>
 						@endif
 					</div>
@@ -35,7 +35,9 @@
 									<th scope="col">Titre</th>
 									<th scope="col">Début</th>
 									<th scope="col">Fin</th>
-									<th scope="col">Actions</th>
+									@if (auth()->check() && auth()->user()->role == "Administrateur")
+										<th scope="col">Actions</th>
+									@endif
 								</tr>
 							</thead>
 							<tbody>
@@ -51,16 +53,16 @@
 										<td>{{$theme->libelle_theme}}</td>
 										<td></td>
 										<td></td>
+										@if (auth()->check() && auth()->user()->role == "Administrateur")
 											<td>
-												@if (auth()->user()->role == "Administrateur")
-													<a href="/themes/{{$theme->id}}/edit" class="btn btn-primary btn-sm">
-														<i class="bi bi-pencil-square"></i>
-													</a>
-													<a href="/themes/{{$theme->id}}/delete" class="btn btn-danger btn-sm suppression">
-														<i class="bi bi-trash"></i>
-													</a>
-												@endif
-											</td>
+												<a href="/themes/{{$theme->id}}/edit" class="btn btn-primary btn-sm">
+													<i class="bi bi-pencil-square"></i>
+												</a>
+												<a href="/themes/{{$theme->id}}/delete" class="btn btn-danger btn-sm suppression">
+													<i class="bi bi-trash"></i>
+												</a>
+										</td>
+										@endif
 									</tr>
 								@endforeach
 							</tbody>

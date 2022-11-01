@@ -9,7 +9,7 @@
 		<div class="col-md-12">
 			<nav aria-label="breadcrumb" class="float-right mt-1">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+					<li class="breadcrumb-item"><a href="/">Accueil</a></li>
 					<li class="breadcrumb-item active" aria-current="page"><a>etudiants</a></li>
 				</ol>
 			</nav>
@@ -21,7 +21,7 @@
 				<div class="card-body">
 					<div class="titre-ajout">
 						<h4 class="header-title mt-0 mb-1">Encadrements</h4>
-						@if (auth()->user()->role != "Visiteur")
+						@if (auth()->check() && auth()->user()->role == "Administrateur")
 							<a class="ml-auto btn btn-primary" href="/etudiants-create">Ajouter</a>
 						@endif
 					</div>

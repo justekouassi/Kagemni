@@ -27,7 +27,7 @@ class ConnexionController extends Controller
       "avatar" => request("avatar")->store('avatars', 'public'),
     ]);
 
-    return redirect('/');
+    return redirect('/login');
 	}
 
 	/**
@@ -49,7 +49,7 @@ class ConnexionController extends Controller
 		$id = request("id");
     $administrateur = Administrateur::where('id', $id)->first();
 		if ($result) {
-      return redirect('/accueil');
+      return redirect('/');
     }
     return back()->withInput()->withErrors([
       'email' => "Vos identifiants sont incorrects.",
@@ -63,7 +63,7 @@ class ConnexionController extends Controller
 	public function deconnexion()
   {
     auth()->logout();
-    return redirect('/');
+    return redirect('/login');
   }
 
 	/**
@@ -84,6 +84,6 @@ class ConnexionController extends Controller
       "motdepasse_admin" => bcrypt(request("password")),
 		]);
 
-    return redirect('/');
+    return redirect('/login');
 	}
 }

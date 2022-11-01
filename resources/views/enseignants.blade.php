@@ -9,7 +9,7 @@
 		<div class="col-md-12">
 			<nav aria-label="breadcrumb" class="float-right mt-1">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+					<li class="breadcrumb-item"><a href="/">Accueil</a></li>
 					<li class="breadcrumb-item active" aria-current="page"><a>Enseignants</a></li>
 				</ol>
 			</nav>
@@ -21,7 +21,7 @@
 				<div class="card-body">
 					<div class="titre-ajout">
 						<h4 class="header-title mt-0 mb-1">Liste des enseignants </h4>
-						@if (auth()->user()->role != "Visiteur")
+						@if (auth()->check() && auth()->user()->role == "Administrateur")
 							<a class="ml-auto btn btn-primary" href="/enseignants/create">Ajouter</a>
 						@endif
 					</div>
@@ -31,11 +31,13 @@
 							<thead>
 								<tr>
 									<th scope="col">N°</th>
-									<th scope="col">Nom et prénoms</th>
-									<th scope="col">Sexe</th>
-									<th scope="col">Email</th>
-									<th scope="col">Téléphone</th>
-									<th scope="col">Action</th>
+									<th scope="col">Noms et prénoms</th>
+									<th scope="col">Sexes</th>
+									<th scope="col">Emails</th>
+									<th scope="col">Téléphones</th>
+									@if (auth()->check() && auth()->user()->role == "Administrateur")
+										<th scope="col">Actions</th>
+									@endif
 								</tr>
 							</thead>
 							<tbody>
@@ -48,7 +50,7 @@
 										<td>{{$enseignant->sexe_enseignant}}</td>
 										<td>{{$enseignant->email_enseignant}}</td>
 										<td>{{$enseignant->tel_enseignant}}</td>
-										@if (auth()->user()->role == "Administrateur")
+										@if (auth()->check() && auth()->user()->role == "Administrateur")
 											<td>
 												<a href="/enseignants/{{$enseignant->id}}/edit"
 													class="btn btn-primary btn-sm">
@@ -58,8 +60,6 @@
 													<i class="bi bi-trash"></i>
 												</a>
 											</td>
-										@else
-											<td></td>
 										@endif
 									</tr>
 								@endforeach

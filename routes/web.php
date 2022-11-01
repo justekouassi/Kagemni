@@ -12,36 +12,42 @@ use Illuminate\Support\Facades\Route;
 
 /* connexion */
 
-Route::get('/', function () {
+Route::get('/login', function () {
 	return view('index');
 })->name('login');
-Route::post('/', [ConnexionController::class, 'connexion']);
-Route::get('/signup', function () {
-	return view('signup');
+Route::post('/login', [ConnexionController::class, 'connexion']);
+
+/* accueil */
+
+Route::get('/', function () {
+	return view('accueil');
 });
 
 Route::group([
 	'middleware' => 'auth',
 ], function () {
 
+	/* inscription */
+
+	Route::get('/signup', function () {
+		return view('signup');
+	});
 	Route::post('/signup', [ConnexionController::class, 'inscription']);
+
+	/* changement mot de passe */
+
 	Route::get('/nouveau-mdp', function () {
 		return view('nouveau-mdp');
 	});
 	Route::post('/nouveau-mdp', [ConnexionController::class, 'nouveauMdp']);
 
-	/* accueil et déconnexion */
+	/* déconnexion */
 
-	Route::get('/accueil', function () {
-		return view('accueil');
-	});
 	Route::get('/logout', [ConnexionController::class, 'deconnexion']);
 
-	/* enseignants */
 
-	Route::get('/enseignants', function () {
-		return view('enseignants');
-	});
+	/* operations enseignants */
+
 	Route::get('/enseignants/create', function () {
 		return view('enseignants-create');
 	});
@@ -51,11 +57,8 @@ Route::group([
 	Route::get('/enseignants/{id}/delete', [EnseignantController::class, 'supprimer']);
 
 
-	/* etudiants */
+	/* operations etudiants */
 
-	Route::get('/etudiants', function () {
-		return view('etudiants');
-	});
 	Route::get('/etudiants/create', function () {
 		return view('etudiants-create');
 	});
@@ -65,11 +68,7 @@ Route::group([
 	Route::get('/etudiants/{id}/delete', [EtudiantController::class, 'supprimer']);
 
 
-	/* classes */
-
-	Route::get('/classes', function () {
-		return view('classes');
-	});
+	/* operations classes */
 
 	Route::get('/classes/create', [ClasseController::class, 'index']);
 	Route::post('classes/create/fetch', [ClasseController::class, 'fetch'])->name('classes-create.fetch');
@@ -80,11 +79,8 @@ Route::group([
 	Route::get('/classes/{id}/delete', [ClasseController::class, 'supprimer']);
 
 
-	/* cours */
+	/* operations cours */
 
-	Route::get('/cours', function () {
-		return view('cours');
-	});
 	Route::get('/cours/create', function () {
 		return view('cours-create');
 	});
@@ -94,11 +90,8 @@ Route::group([
 	Route::get('/cours/{id}/delete', [CoursController::class, 'supprimer']);
 
 
-	/* projets */
+	/* operations projets */
 
-	Route::get('/projets', function () {
-		return view('projets');
-	});
 	Route::get('/projets/create', function () {
 		return view('projets-create');
 	});
@@ -108,11 +101,8 @@ Route::group([
 	Route::get('/projets/{id}/delete', [ProjetController::class, 'supprimer']);
 
 
-	/* themes */
+	/* operations themes */
 
-	Route::get('/themes', function () {
-		return view('themes');
-	});
 	Route::get('/themes/create', function () {
 		return view('themes-create');
 	});
@@ -120,11 +110,29 @@ Route::group([
 	Route::get('/themes/{id}/edit', [ThemeController::class, 'consulter']);
 	Route::post('/themes/{id}/edit', [ThemeController::class, 'modifier']);
 	Route::get('/themes/{id}/delete', [ThemeController::class, 'supprimer']);
+});
 
 
-	/* encadrements */
+/* vues visiteurs */
 
-	Route::get('/encadrements', function () {
-		return view('encadrements');
-	});
+Route::get('/enseignants', function () {
+	return view('enseignants');
+});
+Route::get('/etudiants', function () {
+	return view('etudiants');
+});
+Route::get('/classes', function () {
+	return view('classes');
+});
+Route::get('/cours', function () {
+	return view('cours');
+});
+Route::get('/projets', function () {
+	return view('projets');
+});
+Route::get('/themes', function () {
+	return view('themes');
+});
+Route::get('/encadrements', function () {
+	return view('encadrements');
 });

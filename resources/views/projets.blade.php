@@ -9,7 +9,7 @@
 		<div class="col-md-12">
 			<nav aria-label="breadcrumb" class="float-right mt-1">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+					<li class="breadcrumb-item"><a href="/">Accueil</a></li>
 					<li class="breadcrumb-item active" aria-current="page"><a>Projets</a></li>
 				</ol>
 			</nav>
@@ -21,7 +21,7 @@
 				<div class="card-body">
 					<div class="titre-ajout">
 						<h4 class="header-title mt-0 mb-1">Liste des projets</h4>
-						@if (auth()->user()->role != "Visiteur")
+						@if (auth()->check() && auth()->user()->role == "Administrateur")
 							<a class="ml-auto btn btn-primary" href="/projets/create">Ajouter</a>
 						@endif
 					</div>
@@ -35,7 +35,9 @@
 									<th scope="col">Titre</th>
 									<th scope="col">Début</th>
 									<th scope="col">Fin</th>
-									<th scope="col">Actions</th>
+									@if (auth()->check() && auth()->user()->role == "Administrateur")
+										<th scope="col">Actions</th>
+									@endif
 								</tr>
 							</thead>
 							<tbody>
@@ -52,7 +54,7 @@
 										<td>{{$projet->libelle_projet}}</td>
 										<td>{{$projet->debut_projet}}</td>
 										<td>{{$projet->fin_projet}}</td>
-										@if (auth()->user()->role == "Administrateur")
+										@if (auth()->check() && auth()->user()->role == "Administrateur")
 											<td>
 												<a href="/projets/{{$projet->id}}/edit" class="btn btn-primary btn-sm">
 													<i class="bi bi-pencil-square"></i>
@@ -61,8 +63,6 @@
 													<i class="bi bi-trash"></i>
 												</a>
 											</td>
-										@else
-											<td></td>
 										@endif
 									</tr>
 								@endforeach

@@ -40,7 +40,7 @@
 </head>
 
 <body>
-	{{-- <a class="navbar-brand" href="/accueil" style="margin: auto">
+	{{-- <a class="navbar-brand" href="/" style="margin: auto">
 		<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30"/>
 		&nbsp;KAGEMNI
 	</a> --}}
@@ -53,67 +53,74 @@
 				</button>
 			</div>
 			<div class="p-4">
-				<h1><a href="/accueil" class="logo">Kagemni</a></h1>
+				<h1><a href="/" class="logo">Kagemni</a></h1>
 				<ul class="list-unstyled components mb-5">
 					<div style="display: column; margin-top: 40px">
-						<li class="menu-title">{{ auth()->user()->role }}</li>
+						<li class="menu-title">
+							{{ auth()->user()->role ?? "Bienvenue cher visiteur" }}
+						</li>
 							{{-- <img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar" style="margin: auto;"/> --}}
-							<span style="margin: auto">{{ auth()->user()->email_admin }}</span>
+							<span style="margin: auto">
+								{{ auth()->user()->email_admin ?? "" }}
+							</span>
 					</div>
-					<li class="nav-item active">
-						<a class="nav-link" href="/accueil">
+					<li class="nav-item {{request()->is('accueil') ? 'active' : ''}}">
+						<a class="nav-link" href="/">
 							<i class="bi bi-house-door"></i>
 							<span>Accueil</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item {{request()->is('enseignants') ? 'active' : ''}}">
 						<a class="nav-link" href="/enseignants">
 							<i class="bi bi-person"></i>
 							<span>Enseignants</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item {{request()->is('etudiants') ? 'active' : ''}}">
 						<a class="nav-link" href="/etudiants">
 							<i class="bi bi-people"></i>
 							<span>Etudiants</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item {{request()->is('classes') ? 'active' : ''}}">
 						<a class="nav-link" href="/classes">
 							<i class="bi bi-calendar4-week"></i>
 							<span>Classes</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item {{request()->is('cours') ? 'active' : ''}}">
 						<a class="nav-link" href="/cours">
 							<i class="bi bi-book"></i>
 							<span>Cours</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item {{request()->is('encadrements') ? 'active' : ''}}">
 						<a class="nav-link" href="/encadrements">
 							<i class="bi bi-star"></i>
 							<span>Encadrements</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item {{request()->is('projets') ? 'active' : ''}}">
 						<a class="nav-link" href="/projets">
 							<i class="bi bi-pencil-square"></i>
 							<span>Projets enseignants</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item {{request()->is('themes') ? 'active' : ''}}">
 						<a class="nav-link" href="/themes">
 							<i class="bi bi-folder2-open"></i>
 							<span>Thèmes étudiants</span>
 						</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link btn btn-warning" href="/logout">
-							<i class="bi bi-escape"></i>
-							<span>Déconnexion</span>
-						</a>
-					</li>
+					@if (auth()->check() && auth()->user()->role == "Administrateur")
+						<li class="nav-item">
+							<a class="nav-link btn btn-warning" href="/logout">
+								<i class="bi bi-escape"></i>
+								<span>Déconnexion</span>
+							</a>
+						</li>
+					@endif
+					
 				</ul>
 
 				<footer class="footer">

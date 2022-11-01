@@ -15,7 +15,7 @@
 						<div class="row g-0">
 							<div class="col-lg-6 p-4">
 								<div class="mx-auto">
-									<a href="/" style="text-decoration: none">
+									<a href="/login" style="text-decoration: none">
 										<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30" />
 										&nbsp;&nbsp;<span style="font-family: cursive">KAGEMNI</span>
 									</a>

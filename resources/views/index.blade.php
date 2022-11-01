@@ -14,7 +14,7 @@
 					<div class="row g-0">
 						<div class="col-lg-6 p-4">
 							<div class="mx-auto">
-								<a href="/" style="text-decoration: none">
+								<a href="/login" style="text-decoration: none">
 									<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30" />
 									&nbsp;&nbsp;<span style="font-family: cursive">KAGEMNI</span>
 								</a>
@@ -23,7 +23,7 @@
 							<h6 class="h5 mb-0 mt-3">Bienvenue cher gestionnaire</h6>
 							<p class="text-muted mt-1 mb-4">Entrez votre adresse mail et votre de passe pour accéder au tableau de bord.</p>
 
-							<form method="POST" action="/">
+							<form method="POST" action="/login">
 								@csrf
 								<div class="div-input mb-3">
 									<label class="form-label">Adresse email</label>
