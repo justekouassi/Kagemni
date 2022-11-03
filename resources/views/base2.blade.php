@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="title" content="Kagemni | plateforme web de gestion"/>
-	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants du Département de Formation et de Recherche Mathématiques Informatique (DFRMI) de l'Institut National Polytechnique Félix Houphouët-Boigny"/>
+	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants du Département de Formation et de Recherche Mathématiques Informatique de l'INPHB"/>
 	<meta name="robots" content="index, follow"/>
 
 	<link rel="canonical" href="https://kagemni.herokuapp.com">
@@ -59,10 +59,12 @@
 						<li class="menu-title">
 							{{ auth()->user()->role ?? "Bienvenue cher visiteur" }}
 						</li>
-							<img src="/storage/{{ auth()->user()->avatar }}" class="avatar-sm rounded-circle mr-2" alt="Avatar"/>
+						@if (auth()->check() && auth()->user()->role == 'Administrateur' )
+							<img src="/storage/{{ auth()->user()->avatar ?? '' }}" class="avatar-sm rounded-circle mr-2" alt="Avatar"/>
 							<span class="email-admin">
-								{{ auth()->user()->email_admin ?? "" }}
+								{{ auth()->user()->email_admin }}
 							</span>
+						@endif
 					</div>
 					<li class="nav-item {{request()->is('/') ? 'active' : ''}}">
 						<a class="nav-link" href="/">
