@@ -62,10 +62,11 @@
 											<label class="col-lg-2 col-form-label" for="enseignant">Enseignant</label>
 											<div class="col-lg-10" style="margin-bottom: 11px">
 												<select required name="enseignant" class="form-select" id="enseignant">
-													<?php $enseignants = \App\Models\Enseignant::all() ?>
+													@php $enseignants = \App\Models\Enseignant::all() @endphp
 													<option value="{{$cours->id_enseignant}}">{{$cours->id_enseignant}}</option>
 													@foreach ($enseignants as $enseignant)
-														<option value="{{$enseignant->id}}">{{$enseignant->nom_enseignant}} {{$enseignant->prenoms_enseignant}}</option>
+														<option value="{{$enseignant->id}}">{{$enseignant->nom_enseignant}} {{$enseignant->prenoms_enseignant}}
+														</option>
 													@endforeach
 												</select>
 											</div>

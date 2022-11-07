@@ -15,4 +15,13 @@ class Projet extends Model
 		'fin_projet',
 		'id_enseignant',
 	];
+
+	public static function validate()
+	{
+		request()->validate([
+			'projet' => ['required'],
+			'debut' => ['required'],
+			'fin' => ['required'],
+		]);
+	}
 }

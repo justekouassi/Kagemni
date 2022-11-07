@@ -36,7 +36,6 @@ class AccueilController extends Controller
 			DESC LIMIT 1";
 			
 		$super_chercheur = DB::select($requete_super_chercheur);
-		// dd($super_encadreur);
 
 		return view("accueil", [
 			'enseignants' => $enseignants,

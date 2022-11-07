@@ -1,5 +1,11 @@
+:root {
+	--color-1: #494ca2;
+	--color-2: #ffed4f;
+	--color-3: #fc5b5bcb;
+}
+
 body {
-	font-family: "Poppins", Arial, sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.8;
 	font-weight: normal;
@@ -10,7 +16,7 @@ body {
 a {
 	transition: .3s all ease;
 	text-decoration: none !important;
-	color: #494ca2;
+	color: var(--color-1);
 }
 a:hover, a:focus {
 	outline: none !important;
@@ -46,7 +52,7 @@ h4 {
 #sidebar {
 	min-width: 270px;
 	max-width: 270px;
-	background: #494ca2;
+	background: var(--color-1);
 	color: #fff;
 	transition: all 0.3s;
 	position: relative;
@@ -131,8 +137,8 @@ h4 {
 }
 
 .btn.btn-primary {
-	background: #494ca2;
-	border-color: #494ca2;
+	background: var(--color-1);
+	border-color: var(--color-1);
 }
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
@@ -147,7 +153,7 @@ h4 {
 	margin-right: 10px;
 }
 .email-admin {
-	color: #ffed4f;
+	color: var(--color-2);
 }
 table.dataTable {
 	border-collapse: collapse !important;
@@ -166,14 +172,14 @@ form input {
 }
 .footer a {
 	text-decoration: none;
-	color: #ffed4f;
+	color: var(--color-2);
 }
 .nav-link i {
 	padding-right: 8px;
 }
 .logout {
-	background: linear-gradient(to right, #393d7f00, rgba(252, 91, 91, 0.795)) ;
+	background: linear-gradient(to right, #393d7f00, var(--color-3)) ;
 }
 .logout:hover {
-	background: linear-gradient(to left, #393d7f00, rgba(252, 91, 91, 0.795)) ;
+	background: linear-gradient(to left, #393d7f00, var(--color-3)) ;
 }

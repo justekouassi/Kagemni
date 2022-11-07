@@ -17,4 +17,16 @@ class Cours extends Model
 		'id_classe',
 		'id_enseignant',
 	];
+
+	public static function validate()
+	{
+		request()->validate([
+			'matiere' => ['required'],
+			'date' => ['required'],
+			'debut' => ['required'],
+			'fin' => ['required'],
+			'classe' => ['required'],
+			'enseignant' => ['required'],
+		]);
+	}
 }

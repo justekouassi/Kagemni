@@ -40,11 +40,6 @@
 </head>
 
 <body>
-	{{-- <a class="navbar-brand" href="/" style="margin: auto">
-		<img src="{{ asset('images/logo.png') }}" alt="Kagemni" width="30"/>
-		&nbsp;KAGEMNI
-	</a> --}}
-
 	<div class="d-flex align-items-stretch">
 		<nav id="sidebar" class="active">
 			<div class="custom-menu">
@@ -122,7 +117,6 @@
 							</a>
 						</li>
 					@endif
-					
 				</ul>
 
 				<footer class="footer">

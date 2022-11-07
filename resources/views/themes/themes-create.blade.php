@@ -34,6 +34,18 @@
 									<div class="col-lg-10">
 										<input required type="text" class="form-control" id="theme" name="theme">
 									</div>
+
+									<label class="col-lg-2 col-form-label" for="etudiant">Etudiant</label>
+									<div class="col-lg-10" style="margin-bottom: 11px">
+										<select required name="etudiant" class="form-select" id="etudiant">
+											<option selected disabled value="">* Choisir un étudiant *</option>
+											@php $etudiants = \App\Models\Etudiant::all() -> sortBy([['nom_etudiant', 'asc'], ['prenoms_etudiant', 'asc'],]) @endphp
+											@foreach ($etudiants as $etudiant)
+												<option value="{{$etudiant->id}}">{{$etudiant->nom_etudiant}} {{$etudiant->prenoms_etudiant}}
+												</option>
+											@endforeach
+										</select>
+									</div>
 								</div>
 								<button type="submit" class="btn btn-primary">Enregistrer</button>
 							</div>

@@ -15,4 +15,14 @@ class Classe extends Model
 		'ecole',
 		'annee_scolaire',
 	];
+
+	public static function validate()
+	{
+		request()->validate([
+			'classe' => ['required'],
+			'filiere' => ['required'],
+			'ecole' => ['required'],
+			'annee' => ['required'],
+		]);
+	}
 }

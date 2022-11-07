@@ -8,15 +8,9 @@ class EnseignantController extends Controller
 {
 	public function ajouter()
 	{
-		request()->validate([
-			'nom' => ['required'],
-			'prenom' => ['required'],
-			'sexe' => ['required'],
-			'tel' => ['required'],
-			'email' => ['required', 'email'],
-		]);
+		Enseignant::validate();
 
-		$enseignant = \App\Models\Enseignant::create([
+		Enseignant::create([
 			"nom_enseignant" => request("nom"),
 			"prenoms_enseignant" => request("prenom"),
 			"sexe_enseignant" => request("sexe"),
@@ -31,20 +25,14 @@ class EnseignantController extends Controller
 	{
 		$id = request("id");
 		$enseignant = Enseignant::where('id', $id)->first();
-		return view("enseignants-edit", [
+		return view("enseignants.enseignants-edit", [
 			'enseignant' => $enseignant,
 		]);
 	}
 
 	public function modifier()
 	{
-		request()->validate([
-			'nom' => ['required'],
-			'prenom' => ['required'],
-			'sexe' => ['required'],
-			'tel' => ['required'],
-			'email' => ['required', 'email'],
-		]);
+		Enseignant::validate();
 
 		$id = request("id");
 		$enseignant = Enseignant::where('id', $id)->first();

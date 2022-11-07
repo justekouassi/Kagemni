@@ -13,7 +13,7 @@ class ClasseController extends Controller
 		$ecoles_list = DB::table('classes')
 			->groupBy('ecole')
 			->get();
-		return view('classes-create')->with('ecoles_list', $ecoles_list);
+		return view('classes.classes-create')->with('ecoles_list', $ecoles_list);
 	}
 
 	function fetch(Request $request)
@@ -34,20 +34,13 @@ class ClasseController extends Controller
 
 	public function ajouter()
 	{
-		request()->validate([
-			'classe' => ['required'],
-			'filiere' => ['required'],
-			'ecole' => ['required'],
-			'annee' => ['required'],
-		]);
-
-		$classe = \App\Models\Classe::create([
+		Classe::validate();
+		Classe::create([
 			"libelle_classe" => request("classe"),
 			"filiere" => request("filiere"),
 			"ecole" => request("ecole"),
 			"annee_scolaire" => request("annee"),
 		]);
-
 		return redirect('/classes');
 	}
 	
@@ -55,20 +48,14 @@ class ClasseController extends Controller
 	{
 		$id = request("id");
 		$classe = Classe::where('id', $id)->first();
-		return view("classes-edit", [
+		return view("classes.classes-edit", [
 			'classe' => $classe,
 		]);
 	}
 
 	public function modifier()
 	{
-		request()->validate([
-			'classe' => ['required'],
-			'filiere' => ['required'],
-			'ecole' => ['required'],
-			'annee' => ['required'],
-		]);
-
+		Classe::validate();
 		$id = request("id");
 		$classe = Classe::where('id', $id)->first();
 		$classe->update([
@@ -77,7 +64,6 @@ class ClasseController extends Controller
 			"ecole" => request("ecole"),
 			"annee_scolaire" => request("annee"),
 		]);
-
 		return redirect('/classes');
 	}
 
@@ -86,7 +72,6 @@ class ClasseController extends Controller
 		$id = request("id");
 		$classe = Classe::where('id', $id)->first();
 		$classe->delete();
-
 		return redirect('/classes');
 	}
 }

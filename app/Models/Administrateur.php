@@ -16,6 +16,14 @@ class Administrateur extends Model implements Authenticatable {
 		'avatar',
 	];
 
+	public static function validate()
+	{
+		request()->validate([
+			'theme' => ['required'],
+			'etudiant' => ['required'],
+		]);
+	}
+
 	public function getAuthPassword() {
 		return $this->motdepasse_admin;
 	}

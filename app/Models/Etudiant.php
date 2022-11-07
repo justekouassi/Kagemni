@@ -18,4 +18,15 @@ class Etudiant extends Model
 		'id_classe',
 		'id_enseignant',
 	];
+
+	public static function validate()
+	{
+		request()->validate([
+			'nom' => ['required'],
+			'prenom' => ['required'],
+			'sexe' => ['required'],
+			'tel' => ['required'],
+			'email' => ['email'],
+		]);
+	}
 }

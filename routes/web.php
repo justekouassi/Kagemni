@@ -48,7 +48,7 @@ Route::group([
 	/* operations enseignants */
 
 	Route::get('/enseignants/create', function () {
-		return view('enseignants-create');
+		return view('enseignants.enseignants-create');
 	});
 	Route::post('/enseignants/create', [EnseignantController::class, 'ajouter']);
 	Route::get('/enseignants/{id}/edit', [EnseignantController::class, 'consulter']);
@@ -59,7 +59,7 @@ Route::group([
 	/* operations etudiants */
 
 	Route::get('/etudiants/create', function () {
-		return view('etudiants-create');
+		return view('etudiants.etudiants-create');
 	});
 	Route::post('/etudiants/create', [EtudiantController::class, 'ajouter']);
 	Route::get('/etudiants/{id}/edit', [EtudiantController::class, 'consulter']);
@@ -81,7 +81,7 @@ Route::group([
 	/* operations cours */
 
 	Route::get('/cours/create', function () {
-		return view('cours-create');
+		return view('cours.cours-create');
 	});
 	Route::post('/cours/create', [CoursController::class, 'ajouter']);
 	Route::get('/cours/{id}/edit', [CoursController::class, 'consulter']);
@@ -92,7 +92,7 @@ Route::group([
 	/* operations projets */
 
 	Route::get('/projets/create', function () {
-		return view('projets-create');
+		return view('projets.projets-create');
 	});
 	Route::post('/projets/create', [ProjetController::class, 'ajouter']);
 	Route::get('/projets/{id}/edit', [ProjetController::class, 'consulter']);
@@ -103,7 +103,7 @@ Route::group([
 	/* operations themes */
 
 	Route::get('/themes/create', function () {
-		return view('themes-create');
+		return view('themes.themes-create');
 	});
 	Route::post('/themes/create', [ThemeController::class, 'ajouter']);
 	Route::get('/themes/{id}/edit', [ThemeController::class, 'consulter']);
@@ -115,23 +115,23 @@ Route::group([
 /* vues visiteurs */
 
 Route::get('/enseignants', function () {
-	return view('enseignants');
+	return view('enseignants.enseignants');
 });
 Route::get('/etudiants', function () {
-	return view('etudiants');
+	return view('etudiants.etudiants');
 });
 Route::get('/classes', function () {
-	return view('classes');
+	return view('classes.classes');
 });
 Route::get('/cours', function () {
-	return view('cours');
+	return view('cours.cours');
 });
 Route::get('/projets', function () {
-	return view('projets');
+	return view('projets.projets');
 });
 Route::get('/themes', function () {
-	return view('themes');
+	return view('themes.themes');
 });
 Route::get('/encadrements', function () {
-	return view('encadrements');
+	return view('encadrements.encadrements');
 });

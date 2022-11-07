@@ -8,16 +8,8 @@ class CoursController extends Controller
 {
 	public function ajouter()
 	{
-		request()->validate([
-			'matiere' => ['required'],
-			'date' => ['required'],
-			'debut' => ['required'],
-			'fin' => ['required'],
-			'classe' => ['required'],
-			'enseignant' => ['required'],
-		]);
-
-		$cours = \App\Models\Cours::create([
+		Cours::validate();
+		Cours::create([
 			"matiere" => request("matiere"),
 			"date_cours" => request("date"),
 			"heure_debut" => request("debut"),
@@ -25,7 +17,6 @@ class CoursController extends Controller
 			"id_classe" => request("classe"),
 			"id_enseignant" => request("enseignant"),
 		]);
-
 		return redirect('/cours');
 	}
 	
@@ -33,22 +24,14 @@ class CoursController extends Controller
 	{
 		$id = request("id");
 		$cours = Cours::where('id', $id)->first();
-		return view("cours-edit", [
+		return view("cours.cours-edit", [
 			'cours' => $cours,
 		]);
 	}
 
 	public function modifier()
 	{
-		request()->validate([
-			'matiere' => ['required'],
-			'date' => ['required'],
-			'debut' => ['required'],
-			'fin' => ['required'],
-			'classe' => ['required'],
-			'enseignant' => ['required'],
-		]);
-
+		Cours::validate();
 		$id = request("id");
 		$cours = Cours::where('id', $id)->first();
 		$cours->update([
@@ -59,7 +42,6 @@ class CoursController extends Controller
 			"id_classe" => request("classe"),
 			"id_enseignant" => request("enseignant"),
 		]);
-
 		return redirect('/cours');
 	}
 
@@ -68,7 +50,6 @@ class CoursController extends Controller
 		$id = request("id");
 		$cours = Cours::where('id', $id)->first();
 		$cours->delete();
-
 		return redirect('/cours');
 	}
 }

@@ -13,4 +13,12 @@ class Theme extends Model
 		'libelle_theme',
 		'id_etudiant',
 	];
+
+	public static function validate()
+	{
+		request()->validate([
+			'theme' => ['required'],
+			'etudiant' => ['required'],
+		]);
+	}
 }

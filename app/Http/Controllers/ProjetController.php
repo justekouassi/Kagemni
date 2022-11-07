@@ -8,18 +8,12 @@ class ProjetController extends Controller
 {
 	public function ajouter()
 	{
-		request()->validate([
-			'projet' => ['required'],
-			'debut' => ['required'],
-			'fin' => ['required'],
-		]);
-
-		$projet = \App\Models\projet::create([
+		Projet::validate();
+		Projet::create([
 			"libelle_projet" => request("projet"),
 			"debut_projet" => request("debut"),
 			"fin_projet" => request("fin"),
 		]);
-
 		return redirect("/projets");
 	}
 	
@@ -27,19 +21,14 @@ class ProjetController extends Controller
 	{
 		$id = request("id");
 		$projet = Projet::where('id', $id)->first();
-		return view("projets-edit", [
+		return view("projets.projets-edit", [
 			'projet' => $projet,
 		]);
 	}
 
 	public function modifier()
 	{
-		request()->validate([
-			'projet' => ['required'],
-			'debut' => ['required'],
-			'fin' => ['required'],
-		]);
-
+		Projet::validate();
 		$id = request("id");
 		$projet = Projet::where('id', $id)->first();
 		$projet->update([
@@ -47,7 +36,6 @@ class ProjetController extends Controller
 			"debut_projet" => request("debut"),
 			"fin_projet" => request("fin"),
 		]);
-
 		return redirect("/projets");
 	}
 
@@ -56,7 +44,6 @@ class ProjetController extends Controller
 		$id = request("id");
 		$projet = Projet::where('id', $id)->first();
 		$projet->delete();
-
 		return redirect("/projets");
 	}
 }
