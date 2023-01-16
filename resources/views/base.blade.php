@@ -6,18 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="title" content="Kagemni | plateforme web de gestion"/>
-	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants du Département de Formation et de Recherche Mathématiques Informatique (DFRMI) de l'Institut National Polytechnique Félix Houphouët-Boigny"/>
+	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants du Département de Formation et de Recherche Mathématiques Informatique (DFRMI) de l'Institut National Polytechnique Félix Houphouët-Boigny (INPHB)"/>
 	<meta name="robots" content="index, follow"/>
 
-	<link rel="canonical" href="https://kagemni.herokuapp.com">
+	<link rel="canonical" href="https://kagemni.justekouassi.com">
 
 	<meta property="og:title" content="Kagemni | Plateforme web de gestion"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="https://kagemni.herokuapp.com/favicon.ico"/>
+	<meta property="og:image" content="https://kagemni.justekouassi.com/favicon.ico"/>
 	<meta property="og:image:type" content="image/jpeg"/>
 	<meta property="og:image:width" content="400"/>
 	<meta property="og:image:height" content="400"/>
-	<meta property="og:url" content="https://kagemni.herokuapp.com"/>
+	<meta property="og:url" content="https://kagemni.justekouassi.com"/>
 	<meta property="og:description" content="Kagemni, plateforme web de gestion des activités des enseignants du DFRMI."/>
 
 	<!-- Favicon --->

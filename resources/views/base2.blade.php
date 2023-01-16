@@ -9,15 +9,15 @@
 	<meta name="description" content="KAGEMNI est une plateforme web de gestion des activités des enseignants du Département de Formation et de Recherche Mathématiques Informatique de l'INPHB"/>
 	<meta name="robots" content="index, follow"/>
 
-	<link rel="canonical" href="https://kagemni.herokuapp.com">
+	<link rel="canonical" href="https://kagemni.justekouassi.com">
 
 	<meta property="og:title" content="Kagemni | Plateforme web de gestion"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="https://kagemni.herokuapp.com/favicon.ico"/>
+	<meta property="og:image" content="https://kagemni.justekouassi.com/favicon.ico"/>
 	<meta property="og:image:type" content="image/jpeg"/>
 	<meta property="og:image:width" content="400"/>
 	<meta property="og:image:height" content="400"/>
-	<meta property="og:url" content="https://kagemni.herokuapp.com"/>
+	<meta property="og:url" content="https://kagemni.justekouassi.com"/>
 	<meta property="og:description" content="Kagemni, plateforme web de gestion des activités des enseignants du DFRMI."/>
 
 	<!-- Favicon --->
@@ -32,6 +32,7 @@
 
 	<!-- Jquery css -->
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
 
 	<!-- Perso css -->
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
@@ -120,7 +121,7 @@
 				</ul>
 
 				<footer class="footer">
-					{{ date('Y') }} &copy; <a href="https://justekouassi.ovh">Juste KOUASSI</a> - Tous droits réservés.
+					{{ date('Y') }} &copy; <a href="https://justekouassi.com">Juste KOUASSI</a> - Tous droits réservés.
 				</footer>
 			</div>
 		</nav>
@@ -139,12 +140,22 @@
 
 	<!-- Jquery js -->
 	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.print.min.js"></script>
+	
 	<script>
 		$(document).ready(function () {
 			$('.table').DataTable({
 				language: {
 					url: "{{ asset('js/datatable-french.json') }}"
-				}
+				},
+				dom: 'Blfrtip',
+				buttons: [
+					{
+						extend: 'print',
+						text: 'Imprimer'
+					}
+  			]
 			});
 		});
 	</script>
@@ -152,6 +163,7 @@
 	<!-- App js -->
 	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
+	@yield('javascript')
 	<noscript>Veuillez activer JavaScript svp !</noscript>
 
 </body>

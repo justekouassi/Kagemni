@@ -9,6 +9,8 @@ use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 class Administrateur extends Model implements Authenticatable {
 	use BasicAuthenticatable;
 
+	protected $table = "administrateurs";
+
 	protected $fillable = [
 		'email_admin',
 		'motdepasse_admin',

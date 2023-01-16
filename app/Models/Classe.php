@@ -9,6 +9,8 @@ class Classe extends Model
 {
 	use HasFactory;
 
+	protected $table = "classes";
+
 	protected $fillable = [
 		'libelle_classe',
 		'filiere',

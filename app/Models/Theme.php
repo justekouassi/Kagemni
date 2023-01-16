@@ -9,6 +9,8 @@ class Theme extends Model
 {
 	use HasFactory;
 
+	protected $table = "themes";
+
 	protected $fillable = [
 		'libelle_theme',
 		'id_etudiant',

@@ -9,6 +9,8 @@ class Projet extends Model
 {
 	use HasFactory;
 
+	protected $table = "projets";
+
 	protected $fillable = [
 		'libelle_projet',
 		'debut_projet',
