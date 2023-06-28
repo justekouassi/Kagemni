@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Administrateur;
 
 /**
@@ -12,59 +13,58 @@ class ConnexionController extends Controller
 	 * assure l'inscription d'un administrateur
 	 * @return login la page de connexion
 	 */
-	public function inscription() {
-    request()->validate([
-      'email' => ['required', 'email'],
-      'password' => ['required'],
-      'role' => ['required'],
-      'avatar' => ['image'],
-    ]);
+	public function inscription()
+	{
+		request()->validate([
+			'email' => ['required', 'email'],
+			'password' => ['required'],
+			'role' => ['required'],
+			'avatar' => ['image'],
+		]);
 
-    $administrateur = Administrateur::create([
-      "email_admin" => request("email"),
-      "motdepasse_admin" => bcrypt(request("password")),
-      "role" => request("role"),
-      "avatar" => request("avatar")->store('avatars', 'public'),
-    ]);
+		Administrateur::create([
+			"email_admin" => request("email"),
+			"motdepasse_admin" => bcrypt(request("password")),
+			"role" => request("role"),
+			"avatar" => request("avatar")->store('avatars', 'public'),
+		]);
 
-    return redirect('/login');
+		return redirect('/login');
 	}
 
 	/**
 	 * assure la connexion d'un administrateur
 	 * @return accueil la page d'accueil
 	 */
-  public function connexion()
-  {
-    request()->validate([
-      'email' => ['required', 'email'],
-      'password' => ['required'],
-    ]);
+	public function connexion()
+	{
+		request()->validate([
+			'email' => ['required', 'email'],
+			'password' => ['required'],
+		]);
 
-    $result = auth()->attempt([
-      'email_admin' => request('email'),
-      'password' => request('password'),
-    ]);
+		$result = auth()->attempt([
+			'email_admin' => request('email'),
+			'password' => request('password'),
+		]);
 
-		$id = request("id");
-    $administrateur = Administrateur::where('id', $id)->first();
 		if ($result) {
-      return redirect('/');
-    }
-    return back()->withInput()->withErrors([
-      'email' => "Vos identifiants sont incorrects.",
-    ]);
-  }
+			return redirect('/');
+		}
+		return back()->withInput()->withErrors([
+			'email' => "Vos identifiants sont incorrects.",
+		]);
+	}
 
 	/**
 	 * assure la déconnexion d'un administrateur
 	 * @return login la page de connexion
 	 */
 	public function deconnexion()
-  {
-    auth()->logout();
-    return redirect('/login');
-  }
+	{
+		auth()->logout();
+		return redirect('/login');
+	}
 
 	/**
 	 * permet de modifier le mot de passe d'un administrateur
@@ -74,16 +74,16 @@ class ConnexionController extends Controller
 	{
 		request()->validate([
 			'email' => ['required', 'email'],
-      'password' => ['required', 'confirmed'],
-      'password_confirmation' => ['required'],
+			'password' => ['required', 'confirmed'],
+			'password_confirmation' => ['required'],
 		]);
 
 		$email = request("email");
 		$administrateur = Administrateur::where('email_admin', $email)->first();
 		$administrateur->update([
-      "motdepasse_admin" => bcrypt(request("password")),
+			"motdepasse_admin" => bcrypt(request("password")),
 		]);
 
-    return redirect('/login');
+		return redirect('/login');
 	}
 }
